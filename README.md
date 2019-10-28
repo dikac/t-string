@@ -1,0 +1,2 @@
+# t-string
+Typescript string
