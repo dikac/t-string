@@ -1,2 +1,2 @@
 # t-string
-Typescript string
+typescript string
