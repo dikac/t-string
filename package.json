@@ -1,6 +1,6 @@
 {
   "name": "t-string",
-  "version": "0.0.4",
+  "version": "0.1.4",
   "description": "Typescript string",
   "dependencies": {
     "@types/node": "^12.12.3",
