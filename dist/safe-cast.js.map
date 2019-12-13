@@ -1,0 +1,1 @@
+{"version":3,"file":"safe-cast.js","sourceRoot":"","sources":["../src/safe-cast.ts"],"names":[],"mappings":";;;;;;;;;;;IAAA,SAAwB,QAAQ,CAAC,MAAY;QAEzC,QAAQ,MAAM,EAAE;YACZ,KAAK,IAAI,CAAE;YACX,KAAK,SAAS;gBACV,OAAO,EAAE,CAAC;YACd;gBACI,OAAO,MAAM,CAAC,QAAQ,EAAE,CAAC;SAChC;IAGL,CAAC;IAXD,2BAWC"}
