@@ -8,6 +8,7 @@
     "file-copy-no-overwrite": "git+https://github.com/dikac/file-copy-no-overwrite.git",
     "npm-run-all": "^4.1.5",
     "t-validatable": "git+https://github.com/dikac/t-validatable.git",
+    "t-validator": "git+https://github.com/dikac/t-validator.git#validator-trial",
     "typescript": "^3.6.4"
   },
   "devDependencies": {
@@ -28,7 +29,7 @@
   },
   "files": [
     "tsconfig-development.json",
-    "src/",
+    "dist/",
     ".gitignore",
     "LICENSE",
     "Readme.md",

@@ -1,6 +1,6 @@
 import Type from "./boolean/type";
 
-export default function Guard(value : any) : string {
+export default function Guard(value : any, ) : string {
 
     if(Type(value)) {
 
