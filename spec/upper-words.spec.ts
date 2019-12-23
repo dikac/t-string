@@ -1,4 +1,4 @@
-import UpperWords from "../src/upper-words";
+import UpperWords from "../dist/upper-words";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 

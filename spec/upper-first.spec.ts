@@ -1,4 +1,4 @@
-import UpperFirst from "../src/upper-first";
+import UpperFirst from "../dist/upper-first";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 

@@ -1,5 +1,5 @@
-import UpperFirst from "../src/upper-first";
-import Trim from "../src/trim";
+import UpperFirst from "../dist/upper-first";
+import Trim from "../dist/trim";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 

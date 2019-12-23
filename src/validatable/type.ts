@@ -16,7 +16,7 @@ export default class Type extends ResultType<string> {
 
     protected getMessage(data: any, valid: boolean) : string {
 
-        return this.valid ? this.factory.typeValid(this.subject, data) : this.factory.typeInvalid(this.subject, data);
+        return valid ? this.factory.typeValid(this.subject, data) : this.factory.typeInvalid(this.subject, data);
     }
 
 }

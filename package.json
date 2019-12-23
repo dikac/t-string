@@ -29,7 +29,6 @@
   },
   "files": [
     "tsconfig.json",
-    "src/",
     "dist/",
     "LICENSE",
     "Readme.md"
