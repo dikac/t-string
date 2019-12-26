@@ -1,5 +1,5 @@
 {
-  "name": "t-string",
+  "name": "@dikac/t-string",
   "version": "0.1.4",
   "description": "Typescript string",
   "dependencies": {
