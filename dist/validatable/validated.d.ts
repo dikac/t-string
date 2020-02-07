@@ -1,4 +1,4 @@
-import Validatable from "t-validatable/validatable";
+import Validatable from "@dikac/t-validatable/validatable";
 import ToString from "../to-string";
 export default class Validated<Wrapped extends ToString = ToString, Result extends Validatable = Validatable> implements Validatable {
     readonly string: Wrapped;

@@ -1,4 +1,4 @@
-import Validatable from "t-validatable/validatable";
+import Validatable from "@dikac/t-validatable/validatable";
 import ToString from "../to-string";
 
 export default class Match implements Validatable, ToString {
