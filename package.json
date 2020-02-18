@@ -4,6 +4,7 @@
   "description": "Typescript string",
   "dependencies": {
     "@dikac/t-validatable": "^0.6.11",
+    "@dikac/t-validator": "^0.1.8",
     "escape-string-regexp": "^2.0.0"
   },
   "devDependencies": {
