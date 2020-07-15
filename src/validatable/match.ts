@@ -1,40 +1,32 @@
-import Validatable from "@dikac/t-validatable/validatable";
-import ToString from "../to-string";
 import Value from "@dikac/t-value/value";
+import Validatable from "@dikac/t-validatable/validatable";
+import Message from "@dikac/t-message/message";
+import Function from "@dikac/t-function/function";
+import MergeWrapper from "@dikac/t-validatable/message/readonly-merge";
+import MessageCallback from "@dikac/t-validatable/message/callback";
+import MatchFromObject from "../boolean/match-from-object";
 
-export default class Match implements Validatable, ToString, Value<string> {
+export default class Match<Msg>
+    extends MergeWrapper<Value<string>, Message<Msg>, Validatable>
 
-    readonly result : RegExpMatchArray|undefined;
-    private _valid : boolean = false;
+{
+    readonly pattern : RegExp;
 
     constructor(
-        private source : string,
-        readonly pattern : RegExp
+        number : string,
+        match : RegExp,
+        message : Function<[Readonly<Value<string> & Validatable>], Msg>,
     ) {
 
-        let match = source.match(pattern);
+        let container : Value<string> & {pattern : RegExp} = {
+            pattern : match,
+            value : number,
+        };
 
-        if(match !== null) {
+        let msg = MessageCallback(container, MatchFromObject, ()=>message(this));
 
-            this.result = match;
-            this._valid = true;
-        }
-    }
+        super(container, msg, msg);
 
-    get value() : string {
-
-        return this.source;
-    }
-
-    get valid(): boolean {
-
-        return this._valid;
-    }
-
-    toString(): string {
-
-        return this.source;
+        this.pattern = match;
     }
 }
-
-

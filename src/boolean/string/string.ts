@@ -1,4 +1,7 @@
-export default function String(valid : boolean, value : unknown) : string {
+export default function String(
+    valid : boolean,
+    value : unknown
+) : string {
 
     let string = (<any>value).toString();
 

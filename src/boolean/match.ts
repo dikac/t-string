@@ -4,7 +4,6 @@ export default function Match(source : string, pattern : RegExp) : boolean {
 
     if(match !== null) {
 
-        this.captured = match[0];
         return true;
     }
 

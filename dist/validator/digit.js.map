@@ -1,0 +1,1 @@
+{"version":3,"file":"digit.js","sourceRoot":"","sources":["../../src/validator/digit.ts"],"names":[],"mappings":";;;;;;;;;;;IAIA,gDAAoD;IAKpD,MAAqB,KAAK;QAMtB,YACU,OAA0E;YAA1E,YAAO,GAAP,OAAO,CAAmE;QAEpF,CAAC;QAED,QAAQ,CAAC,KAAa;YAElB,OAAO,IAAI,eAAgB,CAAC,KAAK,EAAE,IAAI,CAAC,OAAO,CAAC,CAAC;QACrD,CAAC;KACJ;IAfD,wBAeC"}
