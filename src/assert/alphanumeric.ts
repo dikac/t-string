@@ -1,6 +1,6 @@
 import Guard from "../boolean/alphanumeric";
 import Function from "@dikac/t-function/function";
-import Callback from "@dikac/t-function/assert/callback";
+import Parameter from "@dikac/t-function/assert/parameter";
 import AlphanumericError from "./throwable/alphanumeric";
 
 export default function Alphanumeric(
@@ -8,5 +8,5 @@ export default function Alphanumeric(
     error : Function<[string], Error> = AlphanumericError
 ) : asserts value is string {
 
-    Callback(value, Guard, error);
+    Parameter(value, Guard, error);
 }

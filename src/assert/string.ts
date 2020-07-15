@@ -1,6 +1,6 @@
 import Guard from "../boolean/string";
 import Function from "@dikac/t-function/function";
-import Callback from "@dikac/t-function/assert/callback";
+import Parameter from "@dikac/t-function/assert/parameter";
 import StringError from "./throwable/string";
 
 export default function String(
@@ -8,5 +8,5 @@ export default function String(
     error : Function<[unknown], Error> = StringError
 ) : asserts value is string {
 
-    Callback(value, Guard, error);
+    Parameter(value, Guard, error);
 }

@@ -1,6 +1,6 @@
 import Guard from "../boolean/maximum";
 import Function from "@dikac/t-function/function";
-import CallbackArguments from "@dikac/t-function/assert/callback-arguments";
+import ParameterArguments from "@dikac/t-function/assert/parameter-arguments";
 import MaximumError from "./throwable/maximum";
 import Size from "../number/size";
 
@@ -16,5 +16,5 @@ export default function Maximum(
         return Guard(value, maximum, inclusive, converter);
     }
 
-    CallbackArguments(value, guard, error, [maximum, inclusive, converter]);
+    ParameterArguments(value, guard, error, [maximum, inclusive, converter]);
 }

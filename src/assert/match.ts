@@ -1,6 +1,6 @@
 import Guard from "../boolean/match";
 import Function from "@dikac/t-function/function";
-import CallbackArguments from "@dikac/t-function/assert/callback-arguments";
+import ParameterArguments from "@dikac/t-function/assert/parameter-arguments";
 import MatchError from "./throwable/match";
 
 export default function Match(
@@ -9,5 +9,5 @@ export default function Match(
     error : Function<[string, RegExp], Error> = MatchError
 ) : asserts value is string {
 
-    CallbackArguments(value, Guard, error, [pattern]);
+    ParameterArguments(value, Guard, error, [pattern]);
 }
