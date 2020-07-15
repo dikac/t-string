@@ -10,7 +10,7 @@
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     const upper_first_1 = require("./upper-first");
-    function UpperWords(string, ...splitters) {
+    function UpperWords(string, splitters) {
         for (let splitter of splitters) {
             let temp = [];
             for (let str of string.split(splitter)) {

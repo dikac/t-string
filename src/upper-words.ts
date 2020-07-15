@@ -2,7 +2,7 @@ import UpperFirst from './upper-first';
 
 export default function UpperWords (
     string : string,
-    ...splitters : string[]
+    splitters : string[]
 ) : string {
 
     for(let splitter of splitters) {

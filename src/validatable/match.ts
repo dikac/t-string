@@ -1,20 +1,29 @@
 import Validatable from "@dikac/t-validatable/validatable";
 import ToString from "../to-string";
+import Value from "@dikac/t-value/value";
 
-export default class Match implements Validatable, ToString {
+export default class Match implements Validatable, ToString, Value<string> {
 
-    private captured : string = '';
+    readonly result : RegExpMatchArray|undefined;
     private _valid : boolean = false;
 
-    constructor(source : string, pattern : RegExp) {
+    constructor(
+        private source : string,
+        readonly pattern : RegExp
+    ) {
 
         let match = source.match(pattern);
 
         if(match !== null) {
 
-            this.captured = match[0];
+            this.result = match;
             this._valid = true;
         }
+    }
+
+    get value() : string {
+
+        return this.source;
     }
 
     get valid(): boolean {
@@ -24,7 +33,7 @@ export default class Match implements Validatable, ToString {
 
     toString(): string {
 
-        return this.captured;
+        return this.source;
     }
 }
 

@@ -16,7 +16,7 @@ describe("construct & getter", function() {
 
     for(let [original, transformed, delimiters] of map) {
 
-        it(`uppercase words ${original}`, () => expect(transformed).toBe(UpperWords(original, ...delimiters)));
+        it(`uppercase words ${original}`, () => expect(transformed).toBe(UpperWords(original, delimiters)));
     }
 
 });

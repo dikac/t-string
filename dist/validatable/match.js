@@ -11,19 +11,23 @@
     Object.defineProperty(exports, "__esModule", { value: true });
     class Match {
         constructor(source, pattern) {
-            this.captured = '';
+            this.source = source;
+            this.pattern = pattern;
             this._valid = false;
             let match = source.match(pattern);
             if (match !== null) {
-                this.captured = match[0];
+                this.result = match;
                 this._valid = true;
             }
+        }
+        get value() {
+            return this.source;
         }
         get valid() {
             return this._valid;
         }
         toString() {
-            return this.captured;
+            return this.source;
         }
     }
     exports.default = Match;
