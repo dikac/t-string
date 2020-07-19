@@ -13,7 +13,7 @@
     const parameter_arguments_1 = require("@dikac/t-function/assert/parameter-arguments");
     const empty_2 = require("./throwable/empty");
     function Empty(value, empty = true, error = empty_2.default) {
-        parameter_arguments_1.default(value, empty_1.default, error, [empty]);
+        parameter_arguments_1.default(value, empty_1.default, (value, empty) => error(empty, value), [empty]);
     }
     exports.default = Empty;
 });

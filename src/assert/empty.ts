@@ -6,8 +6,8 @@ import EmptyError from "./throwable/empty";
 export default function Empty(
     value : string,
     empty : boolean = true,
-    error : Function<[string], Error> = EmptyError
+    error : Function<[boolean, string], Error> = EmptyError
 ) : asserts value is string {
 
-    ParameterArguments(value, Guard, error, [empty]);
+    ParameterArguments(value, Guard, (value, empty)=>error(empty, value), [empty]);
 }

@@ -61,7 +61,7 @@ for(let [value, [valid, message]] of map) {
             if(validatable.valid) {
                 expect(validatable.message).toBe('string is empty');
             } else {
-                expect(validatable.message).toBe('string is not empty');
+                expect(validatable.message).toBe('string must empty');
             }
         });
 
@@ -77,9 +77,9 @@ for(let [value, [valid, message]] of map) {
             expect(validatable.value).toBe(value);
 
             if(validatable.valid) {
-                expect(validatable.message).toBe('string is empty');
-            } else {
                 expect(validatable.message).toBe('string is not empty');
+            } else {
+                expect(validatable.message).toBe('string must not empty');
             }
         });
     });
