@@ -4,13 +4,14 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports"], factory);
+        define(["require", "exports", "../../safe-cast"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    function String(valid, value) {
-        let string = value.toString();
+    const safe_cast_1 = require("../../safe-cast");
+    function String(valid, value, conversion = safe_cast_1.default) {
+        let string = conversion(value);
         if (valid) {
             return `value "${string}" is string`;
         }

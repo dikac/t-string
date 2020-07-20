@@ -1,9 +1,13 @@
+import SafeCast from "../../safe-cast";
+import FunctionSingle from "@dikac/t-function/function-single";
+
 export default function String(
     valid : boolean,
-    value : unknown
+    value : unknown,
+    conversion : FunctionSingle<unknown, string> = SafeCast
 ) : string {
 
-    let string = (<any>value).toString();
+    let string = conversion(value);
 
     if(valid) {
 
