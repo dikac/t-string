@@ -5,7 +5,7 @@ import Value from "@dikac/t-value/value";
 import AlphabetValidatable from "../validatable/alphabet";
 import Function from "@dikac/t-function/function";
 
-type Return<Msg> = Readonly<Validatable<boolean> & Message<Msg> & Value<string>>;
+export type Return<Msg> = Readonly<Validatable<boolean> & Message<Msg> & Value<string>>;
 
 export default class Alphabet<Msg>
     implements

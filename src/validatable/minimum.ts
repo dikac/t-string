@@ -3,42 +3,35 @@ import Value from "@dikac/t-value/value";
 import Validatable from "@dikac/t-validatable/validatable";
 import Message from "@dikac/t-message/message";
 import Function from "@dikac/t-function/function";
-import MergeWrapper from "@dikac/t-value/message/readonly-merge";
-import MessageCallback from "@dikac/t-value/message/callback";
-import GreaterObject from "../boolean/minimum-from-object";
+import MinimumObject from "./boolean/minimum";
 import Inclusive from "@dikac/t-number/inclusive/inclusive";
 import Size from "../number/size";
 
+
 export default class Minimum<Msg>
-    extends MergeWrapper<Value<string>, Message<Msg>, Validatable>
     implements
-        Readonly<Inclusive>,
-        Readonly<MinimumNumber>
+        Readonly<Inclusive & MinimumNumber &  Value<string> & Message<Msg> & Validatable>
 {
-    readonly minimum : number;
-    readonly inclusive : boolean;
+    readonly valid : boolean;
 
     constructor(
-        number : string,
-        minimum : number,
-        inclusive : boolean,
-        message : Function<[Readonly<Value<string> & Inclusive & MinimumNumber & Validatable>], Msg>,
-        converter : Function<[string], number> = Size,
+        readonly value : string,
+        readonly minimum : number,
+        readonly inclusive : boolean,
+        private _message : Function<[Readonly<Value<string> & Inclusive & MinimumNumber & Validatable>], Msg>,
+        readonly converter : Function<[string], number> = Size,
     ) {
 
-        let container : Inclusive & MinimumNumber & Value<string> & {converter : Function<[string], number>} = {
-            minimum : minimum,
-            inclusive : inclusive,
-            value : number,
-            converter : converter
-        };
+        this.valid = MinimumObject(this);
+    }
 
-        let msg = MessageCallback(container, GreaterObject, ()=>message(this));
+    toString() : string {
 
-        super(container, msg, msg);
+        return this.value;
+    }
 
-        this.minimum = minimum;
-        this.inclusive = inclusive;
+    get message() : Msg {
 
+        return this._message(this);
     }
 }

@@ -2,31 +2,31 @@ import Value from "@dikac/t-value/value";
 import Validatable from "@dikac/t-validatable/validatable";
 import Message from "@dikac/t-message/message";
 import Function from "@dikac/t-function/function";
-import MergeWrapper from "@dikac/t-value/message/readonly-merge";
-import MessageCallback from "@dikac/t-value/message/callback";
-import EmptyFromObject from "../boolean/empty-from-object";
+import EmptyBoolean from "./boolean/empty";
 
 export default class Empty<Msg>
-    extends MergeWrapper<Value<string>, Message<Msg>, Validatable>
+    implements
+        Readonly<Value<string> & Message<Msg> & Validatable>
 
 {
-    readonly empty : boolean;
+    readonly valid : boolean;
 
     constructor(
-        number : string,
-        empty : boolean,
-        message : Function<[Readonly<Value<string> & Validatable>], Msg>,
+        readonly value : string,
+        private _message : Function<[Readonly<Value<string> & Validatable>], Msg>,
     ) {
 
-        let container : Value<string> & {empty : boolean} = {
-            empty : empty,
-            value : number,
-        };
+        this.valid = EmptyBoolean(this);
 
-        let msg = MessageCallback(container, EmptyFromObject, ()=>message(this));
+    }
 
-        super(container, msg, msg);
+    toString() : string {
 
-        this.empty = empty;
+        return this.value;
+    }
+
+    get message() : Msg {
+
+        return this._message(this);
     }
 }

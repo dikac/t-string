@@ -58,13 +58,3 @@ describe('empty', ()=>{
     }
 });
 
-describe('not empty', ()=>{
-
-    for(let [value, [valid, message]] of map) {
-
-        it(message, ()=>{
-            expect(Empty(value, false)).toBe(!valid);
-        });
-    }
-
-});

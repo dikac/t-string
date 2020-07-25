@@ -11,7 +11,7 @@
     Object.defineProperty(exports, "__esModule", { value: true });
     const empty_1 = require("../../boolean/string/empty");
     function Empty(empty, string) {
-        return new Error(empty_1.default(false, empty, string));
+        return new Error(empty_1.default(false, string));
     }
     exports.default = Empty;
 });

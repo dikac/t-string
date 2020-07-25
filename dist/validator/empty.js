@@ -11,12 +11,11 @@
     Object.defineProperty(exports, "__esModule", { value: true });
     const empty_1 = require("../validatable/empty");
     class Empty {
-        constructor(empty, message) {
-            this.empty = empty;
+        constructor(message) {
             this.message = message;
         }
         validate(value) {
-            return new empty_1.default(value, this.empty, this.message);
+            return new empty_1.default(value, this.message);
         }
     }
     exports.default = Empty;

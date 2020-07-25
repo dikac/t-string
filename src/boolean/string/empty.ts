@@ -1,29 +1,14 @@
 export default function Empty(
     valid : boolean,
-    empty : boolean,
     value : string,
 ) : string {
 
-    if(empty) {
+    if(valid) {
 
-        if(valid) {
-
-            return `string is empty`;
-
-        } else {
-
-            return `string must empty`;
-        }
+        return `string is empty`;
 
     } else {
 
-        if(valid) {
-
-            return `string is not empty`;
-
-        } else {
-
-            return `string must not empty`;
-        }
+        return `string must empty`;
     }
 }

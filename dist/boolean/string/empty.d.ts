@@ -1,1 +1,1 @@
-export default function Empty(valid: boolean, empty: boolean, value: string): string;
+export default function Empty(valid: boolean, value: string): string;

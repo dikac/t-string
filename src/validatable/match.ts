@@ -4,7 +4,7 @@ import Message from "@dikac/t-message/message";
 import Function from "@dikac/t-function/function";
 import MergeWrapper from "@dikac/t-value/message/readonly-merge";
 import MessageCallback from "@dikac/t-value/message/callback";
-import MatchFromObject from "../boolean/match-from-object";
+import MatchBoolean from "./boolean/match";
 
 export default class Match<Msg>
     extends MergeWrapper<Value<string>, Message<Msg>, Validatable>
@@ -23,7 +23,7 @@ export default class Match<Msg>
             value : number,
         };
 
-        let msg = MessageCallback(container, MatchFromObject, ()=>message(this));
+        let msg = MessageCallback(container, MatchBoolean, ()=>message(this));
 
         super(container, msg, msg);
 

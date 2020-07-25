@@ -53,7 +53,7 @@ for(let [value, [valid, message]] of map) {
 
         it(message, ()=>{
 
-            let validator = new Empty(true, EmptyMessage);
+            let validator = new Empty(EmptyMessage);
             let validatable = validator.validate(value);
             expect(validatable.valid).toBe(valid);
             expect(validatable.value).toBe(value);
@@ -65,23 +65,6 @@ for(let [value, [valid, message]] of map) {
             }
         });
 
-    });
-
-    describe('not empty', () => {
-
-        it(message, ()=>{
-
-            let validator = new Empty(false, EmptyMessage);
-            let validatable = validator.validate(value);
-            expect(validatable.valid).toBe(!valid);
-            expect(validatable.value).toBe(value);
-
-            if(validatable.valid) {
-                expect(validatable.message).toBe('string is not empty');
-            } else {
-                expect(validatable.message).toBe('string must not empty');
-            }
-        });
     });
 
 }

@@ -5,7 +5,7 @@ import Value from "@dikac/t-value/value";
 import EmptyValidatable from "../validatable/empty";
 import Function from "@dikac/t-function/function";
 
-type Return<Msg> = Readonly<Validatable<boolean> & Message<Msg> & Value<string> & {empty : boolean}>;
+export type Return<Msg> = Readonly<Validatable<boolean> & Message<Msg> & Value<string>>;
 
 export default class Empty<Msg>
     implements
@@ -14,13 +14,12 @@ export default class Empty<Msg>
 {
 
     constructor(
-       public empty : boolean,
        public message : Function<[Readonly<Value<string>> & Readonly<Validatable>], Msg>
     ) {
     }
 
     validate(value: string): Return<Msg> {
 
-        return new EmptyValidatable(value, this.empty, this.message);
+        return new EmptyValidatable(value, this.message);
     }
 }

@@ -3,42 +3,34 @@ import Value from "@dikac/t-value/value";
 import Validatable from "@dikac/t-validatable/validatable";
 import Message from "@dikac/t-message/message";
 import Function from "@dikac/t-function/function";
-import MergeWrapper from "@dikac/t-value/message/readonly-merge";
-import MessageCallback from "@dikac/t-value/message/callback";
-import GreaterObject from "../boolean/maximum-from-object";
+import MaximumObject from "./boolean/maximum";
 import Inclusive from "@dikac/t-number/inclusive/inclusive";
 import Size from "../number/size";
 
 export default class Maximum<Msg>
-    extends MergeWrapper<Value<string>, Message<Msg>, Validatable>
     implements
-        Readonly<Inclusive>,
-        Readonly<MaximumNumber>
+        Readonly<Inclusive & MaximumNumber & Value<string> & Message<Msg> & Validatable>
 {
-    readonly maximum : number;
-    readonly inclusive : boolean;
+    readonly valid : boolean;
 
     constructor(
-        number : string,
-        maximum : number,
-        inclusive : boolean,
-        message : Function<[Readonly<Value<string> & Inclusive & MaximumNumber & Validatable>], Msg>,
-        converter : Function<[string], number> = Size,
+        readonly value : string,
+        readonly maximum : number,
+        readonly inclusive : boolean,
+        private _message : Function<[Readonly<Value<string> & Inclusive & MaximumNumber & Validatable>], Msg>,
+        readonly converter : Function<[string], number> = Size,
     ) {
 
-        let container : Inclusive & MaximumNumber & Value<string> & {converter : Function<[string], number>} = {
-            maximum : maximum,
-            inclusive : inclusive,
-            value : number,
-            converter : converter
-        };
+        this.valid = MaximumObject(this);
+    }
 
-        let msg = MessageCallback(container, GreaterObject, ()=>message(this));
+    toString() : string {
 
-        super(container, msg, msg);
+        return this.value;
+    }
 
-        this.maximum = maximum;
-        this.inclusive = inclusive;
+    get message() : Msg {
 
+        return this._message(this);
     }
 }

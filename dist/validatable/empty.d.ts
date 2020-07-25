@@ -2,8 +2,11 @@ import Value from "@dikac/t-value/value";
 import Validatable from "@dikac/t-validatable/validatable";
 import Message from "@dikac/t-message/message";
 import Function from "@dikac/t-function/function";
-import MergeWrapper from "@dikac/t-value/message/readonly-merge";
-export default class Empty<Msg> extends MergeWrapper<Value<string>, Message<Msg>, Validatable> {
-    readonly empty: boolean;
-    constructor(number: string, empty: boolean, message: Function<[Readonly<Value<string> & Validatable>], Msg>);
+export default class Empty<Msg> implements Readonly<Value<string> & Message<Msg> & Validatable> {
+    readonly value: string;
+    private _message;
+    readonly valid: boolean;
+    constructor(value: string, _message: Function<[Readonly<Value<string> & Validatable>], Msg>);
+    toString(): string;
+    get message(): Msg;
 }

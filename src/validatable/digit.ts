@@ -2,26 +2,31 @@ import Value from "@dikac/t-value/value";
 import Validatable from "@dikac/t-validatable/validatable";
 import Message from "@dikac/t-message/message";
 import Function from "@dikac/t-function/function";
-import MergeWrapper from "@dikac/t-value/message/readonly-merge";
-import MessageCallback from "@dikac/t-value/message/callback";
 import DigitFromObject from "../boolean/digit";
 
 export default class Digit<Msg>
-    extends MergeWrapper<Value<string>, Message<Msg>, Validatable>
+    implements
+        Readonly<Value<string> & Message<Msg> & Validatable>
 
 {
+    readonly valid : boolean;
+
     constructor(
-        string : string,
-        message : Function<[Readonly<Value<string> & Validatable>], Msg>,
+        readonly value : string,
+        private _message : Function<[Readonly<Value<string> & Validatable>], Msg>,
     ) {
 
-        let msg = MessageCallback(string, DigitFromObject, ()=>message(this));
+        this.valid = DigitFromObject(value);
 
-        super({value : string}, msg, msg);
     }
 
     toString() : string {
 
         return this.value;
+    }
+
+    get message() : Msg {
+
+        return this._message(this);
     }
 }
