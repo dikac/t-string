@@ -1,13 +1,12 @@
 import Guard from "../boolean/empty";
 import Function from "@dikac/t-function/function";
-import ParameterArguments from "@dikac/t-function/assert/parameter-arguments";
+import Callback from "@dikac/t-function/assert/callback";
 import EmptyError from "./throwable/empty";
 
 export default function Empty(
     value : string,
-    empty : boolean = true,
-    error : Function<[boolean, string], Error> = EmptyError
+    error : Function<[string], Error> = EmptyError
 ) : asserts value is string {
 
-    ParameterArguments(value, Guard, (value, empty)=>error(empty, value), [empty]);
+    Callback(value, Guard, error);
 }

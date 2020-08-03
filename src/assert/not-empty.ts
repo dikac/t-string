@@ -1,11 +1,11 @@
-import Guard from "../boolean/alphanumeric";
+import Guard from "../boolean/not-empty";
 import Function from "@dikac/t-function/function-single";
 import Callback from "@dikac/t-function/assert/callback";
-import AlphanumericError from "./throwable/alphanumeric";
+import EmptyError from "./throwable/not-empty";
 
-export default function Alphanumeric(
+export default function Empty(
     value : string,
-    error : Function<string, Error> = AlphanumericError
+    error : Function<string, Error> = EmptyError
 ) : asserts value is string {
 
     Callback(value, Guard, error);

@@ -7,24 +7,29 @@ import Function from "@dikac/t-function/function";
 import Inclusive from "@dikac/t-number/inclusive/inclusive";
 import MaximumNumber from "@dikac/t-number/maximum/maximum";
 import Size from "../number/size";
+import Return from "@dikac/t-validator/return/return";
+import MinimumValidatable from "../validatable/minimum";
 
-export default class Maximum<Msg>
+export default class Maximum<MessageT>
     implements
-        Validator<string, Validatable & Message<Msg> & Value<string>>,
-        Message<Function<[Readonly<Value<string> & Inclusive & MaximumNumber & Validatable>], Msg>>,
+        Validator<string, string, MaximumValidatable<MessageT>>,
+        Message<Function<[Readonly<Value<string> & Inclusive & MaximumNumber & Validatable>], MessageT>>,
         MaximumNumber,
         Inclusive
 {
     constructor(
         public maximum : number,
         public inclusive : boolean,
-        public message : Function<[Readonly<Value<string> & Inclusive & MaximumNumber & Validatable>], Msg>,
+        public message : Function<[Readonly<Value<string> & Inclusive & MaximumNumber & Validatable>], MessageT>,
         public converter : Function<[string], number> = Size,
     ) {
     }
 
-    validate(value: string): Readonly<Validatable & Message<Msg> & Value<string> & Inclusive & MaximumNumber> {
+    validate<Argument extends string>(
+        value: Argument
+    ) : Return<string, Argument, string, MaximumValidatable<MessageT>> {
 
-        return new MaximumValidatable(value, this.maximum, this.inclusive, this.message, this.converter);
+        return <Return<string, Argument, string, MaximumValidatable<MessageT>>>
+            new MaximumValidatable(value, this.maximum, this.inclusive, this.message, this.converter);
     }
 }

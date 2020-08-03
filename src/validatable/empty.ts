@@ -1,7 +1,7 @@
 import Value from "@dikac/t-value/value";
 import Validatable from "@dikac/t-validatable/validatable";
 import Message from "@dikac/t-message/message";
-import Function from "@dikac/t-function/function";
+import Function from "@dikac/t-function/function-single";
 import EmptyBoolean from "./boolean/empty";
 
 export default class Empty<Msg>
@@ -13,7 +13,7 @@ export default class Empty<Msg>
 
     constructor(
         readonly value : string,
-        private _message : Function<[Readonly<Value<string> & Validatable>], Msg>,
+        private _message : Function<Readonly<Value<string> & Validatable>, Msg>,
     ) {
 
         this.valid = EmptyBoolean(this);

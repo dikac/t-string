@@ -1,6 +1,6 @@
 import Guard from "../boolean/numeric";
 import Function from "@dikac/t-function/function";
-import Parameter from "@dikac/t-function/assert/parameter";
+import Callback from "@dikac/t-function/assert/callback";
 import NumericError from "./throwable/numeric";
 
 export default function Numeric(
@@ -8,5 +8,5 @@ export default function Numeric(
     error : Function<[string], Error> = NumericError
 ) : asserts value is string {
 
-    Parameter(value, Guard, error);
+    Callback(value, Guard, error);
 }

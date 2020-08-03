@@ -1,6 +1,6 @@
 import Guard from "../boolean/minimum";
 import Function from "@dikac/t-function/function";
-import ParameterArguments from "@dikac/t-function/assert/parameter-arguments";
+import Callback from "@dikac/t-function/assert/callback";
 import MinimumError from "./throwable/minimum";
 import Size from "../number/size";
 
@@ -16,5 +16,5 @@ export default function Minimum(
         return Guard(value, minimum, inclusive, converter);
     }
 
-    ParameterArguments(value, guard, error, [minimum, inclusive, converter]);
+    Callback(value, guard, error, minimum, inclusive);
 }

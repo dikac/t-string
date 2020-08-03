@@ -3,13 +3,11 @@ import Validatable from "@dikac/t-validatable/validatable";
 import Message from "@dikac/t-message/message";
 import Value from "@dikac/t-value/value";
 import Function from "@dikac/t-function/function";
-declare type Return<Msg> = Readonly<Validatable<boolean> & Message<Msg> & Value<string> & {
+import Instance from "@dikac/t-validator/parameter/instance/instance";
+import Return from "@dikac/t-validator/return/return";
+export default class Match<MessageT> implements Validator<string, string, Readonly<Instance<string, MessageT>>>, Message<Function<[Readonly<Value<string>> & Readonly<Validatable>], MessageT>> {
     pattern: RegExp;
-}>;
-export default class Match<Msg> implements Validator<string, Return<Msg>>, Message<Function<[Readonly<Value<string>> & Readonly<Validatable>], Msg>> {
-    pattern: RegExp;
-    message: Function<[Readonly<Value<string>> & Readonly<Validatable>], Msg>;
-    constructor(pattern: RegExp, message: Function<[Readonly<Value<string>> & Readonly<Validatable>], Msg>);
-    validate(value: string): Return<Msg>;
+    message: Function<[Readonly<Value<string>> & Readonly<Validatable>], MessageT>;
+    constructor(pattern: RegExp, message: Function<[Readonly<Value<string>> & Readonly<Validatable>], MessageT>);
+    validate<Argument extends string>(value: Argument): Return<string, Argument, string, Readonly<Instance<string, MessageT>>>;
 }
-export {};

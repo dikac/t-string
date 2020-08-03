@@ -4,22 +4,26 @@ import Message from "@dikac/t-message/message";
 import Value from "@dikac/t-value/value";
 import NumericValidatable from "../validatable/numeric";
 import Function from "@dikac/t-function/function";
+import Instance from "@dikac/t-validator/parameter/instance/instance";
+import Return from "@dikac/t-validator/return/return";
 
-export type Return<Msg> = Readonly<Validatable<boolean> & Message<Msg> & Value<string>>;
 
-export default class Numeric<Msg>
+export default class Numeric<MessageT>
     implements
-        Validator<string, Return<Msg>>,
-        Message<Function<[Readonly<Value<string>> & Readonly<Validatable>], Msg>>
+        Validator<string, string, Readonly<Instance<string, MessageT>>>,
+        Message<Function<[Readonly<Value<string> & Validatable>], MessageT>>
 {
 
     constructor(
-       public message : Function<[Readonly<Value<string>> & Readonly<Validatable>], Msg>
+       public message : Function<[Readonly<Value<string>> & Readonly<Validatable>], MessageT>
     ) {
     }
 
-    validate(value: string): Return<Msg> {
+    validate<Argument extends string>(
+        value: Argument
+    ) : Return<string, Argument, string, Readonly<Instance<string, MessageT>>> {
 
-        return new NumericValidatable(value, this.message);
+        return <Return<string, Argument, string, Readonly<Instance<string, MessageT>>>>
+            new NumericValidatable(value, this.message);
     }
 }
