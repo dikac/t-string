@@ -66,7 +66,7 @@ describe(`value equal to minimum`,function() {
 
     describe(`inclusive`,function() {
 
-        let greater = new Minimum<string>('1', 1, true, MinimumString);
+        let greater = new Minimum<string, string>('1', 1, true, MinimumString);
 
         it('validate object', ()=>{
 
@@ -80,7 +80,7 @@ describe(`value equal to minimum`,function() {
 
     describe(`exclusive`,function() {
 
-        let greater = new Minimum<string>('1', 1, false, MinimumString);
+        let greater = new Minimum<string, string>('1', 1, false, MinimumString);
 
         it('validate object', ()=>{
 
@@ -97,7 +97,7 @@ describe(`value greater to minimum`,function() {
 
     describe(`inclusive`,function() {
 
-        let greater = new Minimum<string>('ab', 1, true, MinimumString);
+        let greater = new Minimum<string, string>('ab', 1, true, MinimumString);
 
         it('validate object', ()=>{
 
@@ -111,7 +111,7 @@ describe(`value greater to minimum`,function() {
 
     describe(`exclusive`,function() {
 
-        let greater = new Minimum<string>('ab', 1, false, MinimumString);
+        let greater = new Minimum<string, string>('ab', 1, false, MinimumString);
 
         it('validate object', ()=>{
 
@@ -128,7 +128,7 @@ describe(`value lower to minimum`,function() {
 
     describe(`inclusive`,function() {
 
-        let greater = new Minimum<string>('a', 2, true, MinimumString);
+        let greater = new Minimum<string, string>('a', 2, true, MinimumString);
 
         it('validate object', ()=>{
 
@@ -142,7 +142,7 @@ describe(`value lower to minimum`,function() {
 
     describe(`exclusive`,function() {
 
-        let greater = new Minimum<string>('a', 2, false, MinimumString);
+        let greater = new Minimum<string, string>('a', 2, false, MinimumString);
 
         it('validate object', ()=>{
 

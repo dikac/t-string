@@ -4,16 +4,16 @@ import Message from "@dikac/t-message/message";
 import Function from "@dikac/t-function/function";
 import AlphabetFromObject from "../boolean/alphabet";
 
-export default class Alphabet<Msg>
+export default class Alphabet<ValueT extends string, MessageT>
     implements
-        Readonly<Value<string> & Message<Msg> & Validatable>
+        Readonly<Value<ValueT> & Message<MessageT> & Validatable>
 
 {
     readonly valid : boolean;
 
     constructor(
-        readonly value : string,
-        private _message : Function<[Readonly<Value<string> & Validatable>], Msg>,
+        readonly value : ValueT,
+        private _message : Function<[Readonly<Value<ValueT> & Validatable>], MessageT>,
     ) {
 
         this.valid = AlphabetFromObject(value);
@@ -24,7 +24,7 @@ export default class Alphabet<Msg>
         return this.value;
     }
 
-    get message() : Msg {
+    get message() : MessageT {
 
         return this._message(this);
     }

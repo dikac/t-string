@@ -8,18 +8,18 @@ import Inclusive from "@dikac/t-number/inclusive/inclusive";
 import Size from "../number/size";
 
 
-export default class Minimum<Msg>
+export default class Minimum<ValueT extends string, MessageT>
     implements
-        Readonly<Inclusive & MinimumNumber &  Value<string> & Message<Msg> & Validatable>
+        Readonly<Inclusive & MinimumNumber &  Value<ValueT> & Message<MessageT> & Validatable>
 {
     readonly valid : boolean;
 
     constructor(
-        readonly value : string,
+        readonly value : ValueT,
         readonly minimum : number,
         readonly inclusive : boolean,
-        private _message : Function<[Readonly<Value<string> & Inclusive & MinimumNumber & Validatable>], Msg>,
-        readonly converter : Function<[string], number> = Size,
+        private _message : Function<[Readonly<Value<ValueT> & Inclusive & MinimumNumber & Validatable>], MessageT>,
+        readonly converter : Function<[ValueT], number> = Size,
     ) {
 
         this.valid = MinimumObject(this);
@@ -30,7 +30,7 @@ export default class Minimum<Msg>
         return this.value;
     }
 
-    get message() : Msg {
+    get message() : MessageT {
 
         return this._message(this);
     }

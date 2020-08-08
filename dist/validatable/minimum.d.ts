@@ -4,14 +4,14 @@ import Validatable from "@dikac/t-validatable/validatable";
 import Message from "@dikac/t-message/message";
 import Function from "@dikac/t-function/function";
 import Inclusive from "@dikac/t-number/inclusive/inclusive";
-export default class Minimum<Msg> implements Readonly<Inclusive & MinimumNumber & Value<string> & Message<Msg> & Validatable> {
-    readonly value: string;
+export default class Minimum<ValueT extends string, MessageT> implements Readonly<Inclusive & MinimumNumber & Value<ValueT> & Message<MessageT> & Validatable> {
+    readonly value: ValueT;
     readonly minimum: number;
     readonly inclusive: boolean;
     private _message;
-    readonly converter: Function<[string], number>;
+    readonly converter: Function<[ValueT], number>;
     readonly valid: boolean;
-    constructor(value: string, minimum: number, inclusive: boolean, _message: Function<[Readonly<Value<string> & Inclusive & MinimumNumber & Validatable>], Msg>, converter?: Function<[string], number>);
+    constructor(value: ValueT, minimum: number, inclusive: boolean, _message: Function<[Readonly<Value<ValueT> & Inclusive & MinimumNumber & Validatable>], MessageT>, converter?: Function<[ValueT], number>);
     toString(): string;
-    get message(): Msg;
+    get message(): MessageT;
 }

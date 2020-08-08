@@ -4,14 +4,14 @@ import Validatable from "@dikac/t-validatable/validatable";
 import Message from "@dikac/t-message/message";
 import Function from "@dikac/t-function/function";
 import Inclusive from "@dikac/t-number/inclusive/inclusive";
-export default class Maximum<Msg> implements Readonly<Inclusive & MaximumNumber & Value<string> & Message<Msg> & Validatable> {
-    readonly value: string;
+export default class Maximum<ValueT extends string, MessageT> implements Readonly<Inclusive & MaximumNumber & Value<ValueT> & Message<MessageT> & Validatable> {
+    readonly value: ValueT;
     readonly maximum: number;
     readonly inclusive: boolean;
     private _message;
-    readonly converter: Function<[string], number>;
+    readonly converter: Function<[ValueT], number>;
     readonly valid: boolean;
-    constructor(value: string, maximum: number, inclusive: boolean, _message: Function<[Readonly<Value<string> & Inclusive & MaximumNumber & Validatable>], Msg>, converter?: Function<[string], number>);
+    constructor(value: ValueT, maximum: number, inclusive: boolean, _message: Function<[Readonly<Value<ValueT> & Inclusive & MaximumNumber & Validatable>], MessageT>, converter?: Function<[ValueT], number>);
     toString(): string;
-    get message(): Msg;
+    get message(): MessageT;
 }

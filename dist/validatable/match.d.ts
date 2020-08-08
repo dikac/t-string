@@ -2,8 +2,8 @@ import Value from "@dikac/t-value/value";
 import Validatable from "@dikac/t-validatable/validatable";
 import Message from "@dikac/t-message/message";
 import Function from "@dikac/t-function/function-single";
-import MergeWrapper from "@dikac/t-value/message/readonly-merge";
-export default class Match<Msg> extends MergeWrapper<Value<string>, Message<Msg>, Validatable> {
+import MergeWrapper from "@dikac/t-validator/validatable/readonly-merge";
+export default class Match<ValueT extends string, MessageT> extends MergeWrapper<Value<ValueT>, Message<MessageT>, Validatable> {
     readonly pattern: RegExp;
-    constructor(number: string, match: RegExp, message: Function<Readonly<Value<string> & Validatable>, Msg>);
+    constructor(number: ValueT, match: RegExp, message: Function<Readonly<Value<ValueT> & Validatable>, MessageT>);
 }

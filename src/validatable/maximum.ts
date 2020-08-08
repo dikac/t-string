@@ -7,18 +7,18 @@ import MaximumObject from "./boolean/maximum";
 import Inclusive from "@dikac/t-number/inclusive/inclusive";
 import Size from "../number/size";
 
-export default class Maximum<Msg>
+export default class Maximum<ValueT extends string, MessageT>
     implements
-        Readonly<Inclusive & MaximumNumber & Value<string> & Message<Msg> & Validatable>
+        Readonly<Inclusive & MaximumNumber & Value<ValueT> & Message<MessageT> & Validatable>
 {
     readonly valid : boolean;
 
     constructor(
-        readonly value : string,
+        readonly value : ValueT,
         readonly maximum : number,
         readonly inclusive : boolean,
-        private _message : Function<[Readonly<Value<string> & Inclusive & MaximumNumber & Validatable>], Msg>,
-        readonly converter : Function<[string], number> = Size,
+        private _message : Function<[Readonly<Value<ValueT> & Inclusive & MaximumNumber & Validatable>], MessageT>,
+        readonly converter : Function<[ValueT], number> = Size,
     ) {
 
         this.valid = MaximumObject(this);
@@ -29,7 +29,7 @@ export default class Maximum<Msg>
         return this.value;
     }
 
-    get message() : Msg {
+    get message() : MessageT {
 
         return this._message(this);
     }
