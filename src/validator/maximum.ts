@@ -1,4 +1,4 @@
-import Validator from "@dikac/t-validator/simple";
+import Validator from "@dikac/t-validator/validator";
 import Validatable from "@dikac/t-validatable/validatable";
 import Message from "@dikac/t-message/message";
 import Value from "@dikac/t-value/value";
@@ -12,7 +12,7 @@ import MinimumValidatable from "../validatable/minimum";
 
 export default class Maximum<MessageT>
     implements
-        Validator<string, string, MaximumValidatable<string, MessageT>>,
+        Validator<string, string, boolean, boolean, MaximumValidatable<string, MessageT>>,
         Message<Function<[Readonly<Value<string> & Inclusive & MaximumNumber & Validatable>], MessageT>>,
         MaximumNumber,
         Inclusive

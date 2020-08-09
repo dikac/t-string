@@ -1,4 +1,4 @@
-import Validator from "@dikac/t-validator/simple";
+import Validator from "@dikac/t-validator/validator";
 import Validatable from "@dikac/t-validatable/validatable";
 import Message from "@dikac/t-message/message";
 import Value from "@dikac/t-value/value";
@@ -11,7 +11,7 @@ import Return from "@dikac/t-validator/validatable/simple";
 
 export default class Minimum<MessageT>
     implements
-        Validator<string, string, MinimumValidatable<string, MessageT>>,
+        Validator<string, string, boolean, boolean, MinimumValidatable<string, MessageT>>,
         Message<Function<[Readonly<Value<string> & Inclusive & MinimumNumber & Validatable>], MessageT>>,
         MinimumNumber,
         Inclusive
