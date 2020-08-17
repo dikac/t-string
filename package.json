@@ -1,17 +1,17 @@
 {
   "name": "@dikac/t-string",
-  "version": "0.12.5",
+  "version": "0.12.6",
   "description": "Typescript string",
   "dependencies": {
-    "ts-toolbelt": "^6.15.4",
     "@dikac/deployer": "^0.1.5",
     "@dikac/t-function": "^0.11.5",
     "@dikac/t-number": "^0.15.6",
-    "@dikac/t-object": "^0.29.2",
-    "@dikac/t-validatable": "^0.18.4",
+    "@dikac/t-object": "^0.30.0",
+    "@dikac/t-validatable": "^0.18.5",
     "@dikac/t-validator": "^0.15.2",
     "@dikac/t-value": "^0.12.1",
-    "escape-string-regexp": "^4.0.0"
+    "escape-string-regexp": "^4.0.0",
+    "ts-toolbelt": "^6.15.5"
   },
   "devDependencies": {
     "@types/jasmine": "^3.5.12",
