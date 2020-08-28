@@ -1,2 +1,1 @@
-import Function from "@dikac/t-function/function";
-export default function String(value: unknown, error?: Function<[unknown], Error>): string;
+export default function String(value: unknown, error?: (value: unknown) => Error): string;

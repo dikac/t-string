@@ -12,19 +12,19 @@
     const maximum_1 = require("./boolean/maximum");
     const size_1 = require("../number/size");
     class Maximum {
-        constructor(value, maximum, inclusive, _message, converter = size_1.default) {
+        constructor(value, maximum, inclusive, message, converter = size_1.default) {
             this.value = value;
             this.maximum = maximum;
             this.inclusive = inclusive;
-            this._message = _message;
             this.converter = converter;
+            this.messageFactory = message;
             this.valid = maximum_1.default(this);
         }
         toString() {
             return this.value;
         }
         get message() {
-            return this._message(this);
+            return this.messageFactory(this);
         }
     }
     exports.default = Maximum;

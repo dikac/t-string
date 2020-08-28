@@ -1,7 +1,6 @@
 import Value from "@dikac/t-value/value";
 import Validatable from "@dikac/t-validatable/validatable";
 import Message from "@dikac/t-message/message";
-import Function from "@dikac/t-function/function";
 import NumericFromObject from "../boolean/numeric";
 
 export default class Numeric<ValueT extends string, MessageT>
@@ -10,13 +9,15 @@ export default class Numeric<ValueT extends string, MessageT>
 
 {
     readonly valid : boolean;
+    private messageFactory : (result:Readonly<Value<ValueT> & Validatable>)=>MessageT
 
     constructor(
         readonly value : ValueT,
-        private _message : Function<[Readonly<Value<ValueT> & Validatable>], MessageT>,
+        message : (result:Readonly<Value<ValueT> & Validatable>)=>MessageT,
     ) {
 
-        this.valid = NumericFromObject(value);
+        this.messageFactory = message;
+        this.valid = NumericFromObject(this.value);
     }
 
     toString() : string {
@@ -26,6 +27,6 @@ export default class Numeric<ValueT extends string, MessageT>
 
     get message() : MessageT {
 
-        return this._message(this);
+        return this.messageFactory(this);
     }
 }

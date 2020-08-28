@@ -1,7 +1,6 @@
 import Value from "@dikac/t-value/value";
 import Validatable from "@dikac/t-validatable/validatable";
 import Message from "@dikac/t-message/message";
-import Function from "@dikac/t-function/function";
 import AlphanumericFromObject from "../boolean/alphanumeric";
 
 export default class Alphanumeric<ValueT extends string, MessageT>
@@ -9,12 +8,14 @@ export default class Alphanumeric<ValueT extends string, MessageT>
         Readonly<Value<ValueT> & Message<MessageT> & Validatable>
 {
     readonly valid : boolean;
+    private messageFactory : (result:Readonly<Value<ValueT> & Validatable>)=>MessageT;
 
     constructor(
         readonly value : ValueT,
-        private _message : Function<[Readonly<Value<ValueT> & Validatable>], MessageT>,
+        message : (result:Readonly<Value<ValueT> & Validatable>)=>MessageT,
     ) {
 
+        this.messageFactory = message;
         this.valid = AlphanumericFromObject(value);
 
     }
@@ -26,7 +27,7 @@ export default class Alphanumeric<ValueT extends string, MessageT>
 
     get message() : MessageT {
 
-        return this._message(this);
+        return this.messageFactory(this);
     }
 }
 

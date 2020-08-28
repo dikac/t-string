@@ -11,16 +11,16 @@
     Object.defineProperty(exports, "__esModule", { value: true });
     const alphanumeric_1 = require("../boolean/alphanumeric");
     class Alphanumeric {
-        constructor(value, _message) {
+        constructor(value, message) {
             this.value = value;
-            this._message = _message;
+            this.messageFactory = message;
             this.valid = alphanumeric_1.default(value);
         }
         toString() {
             return this.value;
         }
         get message() {
-            return this._message(this);
+            return this.messageFactory(this);
         }
     }
     exports.default = Alphanumeric;

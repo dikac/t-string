@@ -1,7 +1,6 @@
 import Value from "@dikac/t-value/value";
 import Validatable from "@dikac/t-validatable/validatable";
 import Message from "@dikac/t-message/message";
-import Function from "@dikac/t-function/function-single";
 import EmptyBoolean from "./boolean/empty";
 
 export default class Empty<ValueT extends string, MessageT>
@@ -10,14 +9,15 @@ export default class Empty<ValueT extends string, MessageT>
 
 {
     readonly valid : boolean;
+    private messageFactory : (result:Readonly<Value<ValueT> & Validatable>)=>MessageT;
 
     constructor(
         readonly value : ValueT,
-        private _message : Function<Readonly<Value<ValueT> & Validatable>, MessageT>,
+        message : (result:Readonly<Value<ValueT> & Validatable>)=>MessageT,
     ) {
 
+        this.messageFactory = message;
         this.valid = EmptyBoolean(this);
-
     }
 
     toString() : string {
@@ -27,6 +27,6 @@ export default class Empty<ValueT extends string, MessageT>
 
     get message() : MessageT {
 
-        return this._message(this);
+        return this.messageFactory(this);
     }
 }

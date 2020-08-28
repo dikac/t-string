@@ -11,16 +11,16 @@
     Object.defineProperty(exports, "__esModule", { value: true });
     const alphabet_1 = require("../boolean/alphabet");
     class Alphabet {
-        constructor(value, _message) {
+        constructor(value, message) {
             this.value = value;
-            this._message = _message;
+            this.messageFactory = message;
             this.valid = alphabet_1.default(value);
         }
         toString() {
             return this.value;
         }
         get message() {
-            return this._message(this);
+            return this.messageFactory(this);
         }
     }
     exports.default = Alphabet;

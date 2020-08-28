@@ -2,7 +2,6 @@ import MaximumNumber from "@dikac/t-number/maximum/maximum";
 import Value from "@dikac/t-value/value";
 import Validatable from "@dikac/t-validatable/validatable";
 import Message from "@dikac/t-message/message";
-import Function from "@dikac/t-function/function";
 import MaximumObject from "./boolean/maximum";
 import Inclusive from "@dikac/t-number/inclusive/inclusive";
 import Size from "../number/size";
@@ -12,15 +11,17 @@ export default class Maximum<ValueT extends string, MessageT>
         Readonly<Inclusive & MaximumNumber & Value<ValueT> & Message<MessageT> & Validatable>
 {
     readonly valid : boolean;
+    private messageFactory : (result:Readonly<Value<ValueT> & Inclusive & MaximumNumber & Validatable>)=>MessageT;
 
     constructor(
         readonly value : ValueT,
         readonly maximum : number,
         readonly inclusive : boolean,
-        private _message : Function<[Readonly<Value<ValueT> & Inclusive & MaximumNumber & Validatable>], MessageT>,
-        readonly converter : Function<[ValueT], number> = Size,
+        message : (result:Readonly<Value<ValueT> & Inclusive & MaximumNumber & Validatable>)=>MessageT,
+        readonly converter : (string:ValueT)=>number = Size,
     ) {
 
+        this.messageFactory = message;
         this.valid = MaximumObject(this);
     }
 
@@ -31,6 +32,6 @@ export default class Maximum<ValueT extends string, MessageT>
 
     get message() : MessageT {
 
-        return this._message(this);
+        return this.messageFactory(this);
     }
 }

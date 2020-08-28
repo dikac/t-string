@@ -1,2 +1,1 @@
-import Function from "@dikac/t-function/function";
-export default function Match(value: string, pattern: RegExp, error?: Function<[string, RegExp], Error>): asserts value is string;
+export default function Match(value: string, pattern: RegExp, error?: (value: string, pattern: RegExp) => Error): asserts value is string;

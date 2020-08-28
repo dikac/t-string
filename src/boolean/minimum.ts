@@ -1,5 +1,4 @@
 import Greater from "@dikac/t-number/boolean/greater"
-import Function from "@dikac/t-function/function"
 import Size from "../number/size";
 
 /**
@@ -11,7 +10,7 @@ export default function Minimum(
     string : string,
     minimum : number,
     inclusive : boolean,
-    converter : Function<[string], number> = Size
+    converter : (value:string)=>number = Size
 ) : boolean {
 
     return Greater(converter(string), minimum, inclusive)

@@ -11,16 +11,16 @@
     Object.defineProperty(exports, "__esModule", { value: true });
     const empty_1 = require("./boolean/empty");
     class Empty {
-        constructor(value, _message) {
+        constructor(value, message) {
             this.value = value;
-            this._message = _message;
+            this.messageFactory = message;
             this.valid = empty_1.default(this);
         }
         toString() {
             return this.value;
         }
         get message() {
-            return this._message(this);
+            return this.messageFactory(this);
         }
     }
     exports.default = Empty;

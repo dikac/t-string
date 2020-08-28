@@ -12,19 +12,19 @@
     const minimum_1 = require("./boolean/minimum");
     const size_1 = require("../number/size");
     class Minimum {
-        constructor(value, minimum, inclusive, _message, converter = size_1.default) {
+        constructor(value, minimum, inclusive, message, converter = size_1.default) {
             this.value = value;
             this.minimum = minimum;
             this.inclusive = inclusive;
-            this._message = _message;
             this.converter = converter;
             this.valid = minimum_1.default(this);
+            this.messageFactory = message;
         }
         toString() {
             return this.value;
         }
         get message() {
-            return this._message(this);
+            return this.messageFactory(this);
         }
     }
     exports.default = Minimum;

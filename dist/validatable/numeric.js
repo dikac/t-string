@@ -11,16 +11,16 @@
     Object.defineProperty(exports, "__esModule", { value: true });
     const numeric_1 = require("../boolean/numeric");
     class Numeric {
-        constructor(value, _message) {
+        constructor(value, message) {
             this.value = value;
-            this._message = _message;
-            this.valid = numeric_1.default(value);
+            this.messageFactory = message;
+            this.valid = numeric_1.default(this.value);
         }
         toString() {
             return this.value;
         }
         get message() {
-            return this._message(this);
+            return this.messageFactory(this);
         }
     }
     exports.default = Numeric;
