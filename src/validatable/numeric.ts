@@ -2,10 +2,11 @@ import Value from "@dikac/t-value/value";
 import Validatable from "@dikac/t-validatable/validatable";
 import Message from "@dikac/t-message/message";
 import NumericFromObject from "../boolean/numeric";
+import ValueOf from "@dikac/t-value/value-of/value-of";
 
 export default class Numeric<ValueT extends string, MessageT>
     implements
-        Readonly<Value<ValueT> & Message<MessageT> & Validatable>
+        Readonly<Value<ValueT> & Message<MessageT> & Validatable>, ValueOf<string>
 
 {
     readonly valid : boolean;
@@ -21,6 +22,11 @@ export default class Numeric<ValueT extends string, MessageT>
     }
 
     toString() : string {
+
+        return this.value;
+    }
+
+    valueOf() : string {
 
         return this.value;
     }

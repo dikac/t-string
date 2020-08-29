@@ -22,6 +22,9 @@
             super(container, msg, msg);
             this.pattern = match;
         }
+        valueOf() {
+            return this.value;
+        }
     }
     exports.default = Match;
 });

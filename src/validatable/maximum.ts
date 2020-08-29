@@ -5,10 +5,11 @@ import Message from "@dikac/t-message/message";
 import MaximumObject from "./boolean/maximum";
 import Inclusive from "@dikac/t-number/inclusive/inclusive";
 import Size from "../number/size";
+import ValueOf from "@dikac/t-value/value-of/value-of";
 
 export default class Maximum<ValueT extends string, MessageT>
     implements
-        Readonly<Inclusive & MaximumNumber & Value<ValueT> & Message<MessageT> & Validatable>
+        Readonly<Inclusive & MaximumNumber & Value<ValueT> & Message<MessageT> & Validatable>, ValueOf<string>
 {
     readonly valid : boolean;
     private messageFactory : (result:Readonly<Value<ValueT> & Inclusive & MaximumNumber & Validatable>)=>MessageT;
@@ -23,6 +24,11 @@ export default class Maximum<ValueT extends string, MessageT>
 
         this.messageFactory = message;
         this.valid = MaximumObject(this);
+    }
+
+    valueOf() : string {
+
+        return this.value;
     }
 
     toString() : string {

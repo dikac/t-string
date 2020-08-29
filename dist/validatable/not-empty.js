@@ -16,6 +16,9 @@
             this.valid = not_empty_1.default(this);
             this.messageFactory = message;
         }
+        valueOf() {
+            return this.value;
+        }
         toString() {
             return this.value;
         }

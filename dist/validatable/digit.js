@@ -22,6 +22,9 @@
         get message() {
             return this.messageFactory(this);
         }
+        valueOf() {
+            return this.value;
+        }
     }
     exports.default = Digit;
 });

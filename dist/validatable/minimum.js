@@ -20,6 +20,9 @@
             this.valid = minimum_1.default(this);
             this.messageFactory = message;
         }
+        valueOf() {
+            return this.value;
+        }
         toString() {
             return this.value;
         }

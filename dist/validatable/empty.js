@@ -19,6 +19,9 @@
         toString() {
             return this.value;
         }
+        valueOf() {
+            return this.value;
+        }
         get message() {
             return this.messageFactory(this);
         }

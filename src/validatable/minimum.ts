@@ -5,11 +5,12 @@ import Message from "@dikac/t-message/message";
 import MinimumObject from "./boolean/minimum";
 import Inclusive from "@dikac/t-number/inclusive/inclusive";
 import Size from "../number/size";
+import ValueOf from "@dikac/t-value/value-of/value-of";
 
 
 export default class Minimum<ValueT extends string, MessageT>
     implements
-        Readonly<Inclusive & MinimumNumber &  Value<ValueT> & Message<MessageT> & Validatable>
+        Readonly<Inclusive & MinimumNumber &  Value<ValueT> & Message<MessageT> & Validatable>, ValueOf<string>, ValueOf<string>
 {
     readonly valid : boolean;
     private messageFactory : (result:Readonly<Value<ValueT> & Inclusive & MinimumNumber & Validatable>)=>MessageT;
@@ -24,6 +25,11 @@ export default class Minimum<ValueT extends string, MessageT>
 
         this.valid = MinimumObject(this);
         this.messageFactory = message;
+    }
+
+    valueOf() : string {
+
+        return this.value;
     }
 
     toString() : string {

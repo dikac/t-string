@@ -16,6 +16,9 @@
             this.messageFactory = message;
             this.valid = alphabet_1.default(value);
         }
+        valueOf() {
+            return this.value;
+        }
         toString() {
             return this.value;
         }

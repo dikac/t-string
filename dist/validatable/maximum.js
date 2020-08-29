@@ -20,6 +20,9 @@
             this.messageFactory = message;
             this.valid = maximum_1.default(this);
         }
+        valueOf() {
+            return this.value;
+        }
         toString() {
             return this.value;
         }
