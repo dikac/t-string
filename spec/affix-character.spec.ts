@@ -1,6 +1,5 @@
 import AffixCharacter from "../dist/affix-character";
 import Padding from "../dist/padding/padding";
-import PrefixCharacter from "../dist/prefix-character";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 

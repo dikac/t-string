@@ -1,4 +1,3 @@
-import Trim from "../dist/trim";
 import PrefixCharacter from "../dist/prefix-character";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});

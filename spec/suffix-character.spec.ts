@@ -1,4 +1,3 @@
-import Trim from "../dist/trim";
 import SuffixCharacter from "../dist/suffix-character";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
