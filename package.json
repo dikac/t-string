@@ -1,6 +1,6 @@
 {
   "name": "@dikac/t-string",
-  "version": "0.12.11",
+  "version": "0.12.12",
   "description": "Typescript string",
   "dependencies": {
     "@dikac/deployer": "^0.1.5",

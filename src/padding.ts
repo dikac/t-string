@@ -14,7 +14,7 @@ export default function Padding(
         case PaddingOption.SUFFIX :
             return string.padEnd(length, padding);
 
-        case PaddingOption.AFFIX :
+        case PaddingOption.CIRCUMFIX :
 
             const offset = (length - string.length) / 2;
 

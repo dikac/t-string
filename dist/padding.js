@@ -16,7 +16,7 @@
                 return string.padStart(length, padding);
             case padding_1.default.SUFFIX:
                 return string.padEnd(length, padding);
-            case padding_1.default.AFFIX:
+            case padding_1.default.CIRCUMFIX:
                 const offset = (length - string.length) / 2;
                 const prefix = ''.padStart(Math.ceil(offset), padding);
                 const suffix = ''.padEnd(Math.floor(offset), padding);

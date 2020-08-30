@@ -17,6 +17,6 @@ it("right", function() {
 
 it("both", function() {
 
-    expect(Padding('12345', '.|', 10, PaddingOption.AFFIX)).toBe('.|.12345.|');
+    expect(Padding('12345', '.|', 10, PaddingOption.CIRCUMFIX)).toBe('.|.12345.|');
 
 });

@@ -13,7 +13,7 @@
     (function (Padding) {
         Padding[Padding["SUFFIX"] = 0] = "SUFFIX";
         Padding[Padding["PREFIX"] = 1] = "PREFIX";
-        Padding[Padding["AFFIX"] = 2] = "AFFIX";
+        Padding[Padding["CIRCUMFIX"] = 2] = "CIRCUMFIX";
     })(Padding || (Padding = {}));
     exports.default = Padding;
 });

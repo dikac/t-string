@@ -1,7 +1,7 @@
 enum Padding {
     SUFFIX,
     PREFIX,
-    AFFIX
+    CIRCUMFIX
 }
 
 export default Padding;
