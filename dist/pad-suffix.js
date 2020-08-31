@@ -10,7 +10,7 @@
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     const voca_1 = require("voca");
-    const Trim = voca_1.trim;
-    exports.default = Trim;
+    const PadSuffix = voca_1.padRight;
+    exports.default = PadSuffix;
 });
-//# sourceMappingURL=trim.js.map
+//# sourceMappingURL=pad-suffix.js.map

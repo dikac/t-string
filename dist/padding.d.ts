@@ -1,2 +1,6 @@
-import PaddingOption from "./padding/padding";
-export default function Padding(string: string, padding: string, length: number, mode: PaddingOption): string;
+import PaddingOption from "./pad-option";
+declare const Padding: typeof PaddingOption;
+/**
+ * @deprecated use original instead
+ */
+export default Padding;

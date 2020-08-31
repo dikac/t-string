@@ -1,1 +1,2 @@
-export default function Trim(source: string, characters: string): string;
+declare const Trim: (string: string, characters?: string) => string;
+export default Trim;

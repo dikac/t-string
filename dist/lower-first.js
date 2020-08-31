@@ -10,7 +10,9 @@
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     const voca_1 = require("voca");
-    const Trim = voca_1.trim;
-    exports.default = Trim;
+    function UpperFirst(string) {
+        return voca_1.decapitalize(string);
+    }
+    exports.default = UpperFirst;
 });
-//# sourceMappingURL=trim.js.map
+//# sourceMappingURL=lower-first.js.map

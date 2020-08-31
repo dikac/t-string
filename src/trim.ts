@@ -1,7 +1,6 @@
 import * as Escape from "escape-string-regexp";
+import {capitalize, trim} from "voca";
 
-export default function Trim(source : string, characters : string) : string {
+const Trim : (string : string, characters ?: string) => string = trim;
+export default Trim;
 
-    characters = Escape(characters);
-    return source.replace(new RegExp(`(^[${characters}]*|[${characters}]*$)`, 'g'), '');
-}

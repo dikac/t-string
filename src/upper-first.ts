@@ -1,5 +1,7 @@
+import {capitalize, kebabCase} from "voca";
 
-export default function UpperFirst (string : string) : string {
-
-    return string.charAt(0).toUpperCase() + string.substring(1);
-}
+/**
+ * @see capitalize
+ */
+const UpperFirst : (string : string, restToLower ?: boolean) => string = capitalize;
+export default UpperFirst;

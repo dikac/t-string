@@ -9,8 +9,14 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    function Segment(segment, delimiter) {
-        let list = segment.split(delimiter);
+    /**
+     * split {@param string} to its each segment marked by {@param delimiter}
+     *
+     * @param string
+     * @param delimiter
+     */
+    function Segment(string, delimiter) {
+        let list = string.split(delimiter);
         let length = list.length;
         let adds = [];
         for (let i = 1; i <= length; i++) {

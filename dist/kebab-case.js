@@ -10,7 +10,7 @@
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     const voca_1 = require("voca");
-    const Trim = voca_1.trim;
-    exports.default = Trim;
+    const KebabCase = voca_1.kebabCase;
+    exports.default = KebabCase;
 });
-//# sourceMappingURL=trim.js.map
+//# sourceMappingURL=kebab-case.js.map

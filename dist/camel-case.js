@@ -10,7 +10,7 @@
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     const voca_1 = require("voca");
-    const Trim = voca_1.trim;
-    exports.default = Trim;
+    const CamelCase = voca_1.camelCase;
+    exports.default = CamelCase;
 });
-//# sourceMappingURL=trim.js.map
+//# sourceMappingURL=camel-case.js.map
