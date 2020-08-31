@@ -1,4 +1,3 @@
-import * as Escape from "escape-string-regexp";
 import {truncate} from "voca";
 
 /**

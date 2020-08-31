@@ -1,1 +1,1 @@
-{"version":3,"file":"trim-prefix.js","sourceRoot":"","sources":["../src/trim-prefix.ts"],"names":[],"mappings":";;;;;;;;;;;IACA,+BAA0C;IAE1C,MAAM,UAAU,GAAuD,eAAQ,CAAC;IAChF,kBAAe,UAAU,CAAC"}
+{"version":3,"file":"trim-prefix.js","sourceRoot":"","sources":["../src/trim-prefix.ts"],"names":[],"mappings":";;;;;;;;;;;IAAA,+BAA8B;IAE9B,MAAM,UAAU,GAAuD,eAAQ,CAAC;IAChF,kBAAe,UAAU,CAAC"}

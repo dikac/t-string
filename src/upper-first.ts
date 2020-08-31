@@ -1,4 +1,4 @@
-import {capitalize, kebabCase} from "voca";
+import {capitalize} from "voca";
 
 /**
  * @see capitalize
