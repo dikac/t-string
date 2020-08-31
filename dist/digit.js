@@ -9,7 +9,7 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const DIGIT = '0123456789';
-    exports.default = DIGIT;
+    const Digit = '0123456789';
+    exports.default = Digit;
 });
 //# sourceMappingURL=digit.js.map

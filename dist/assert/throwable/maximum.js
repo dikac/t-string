@@ -4,14 +4,14 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../../boolean/string/maximum"], factory);
+        define(["require", "exports", "../string/maximum"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const maximum_1 = require("../../boolean/string/maximum");
-    function Maximum(string, maximum, inclusive) {
-        return new Error(maximum_1.default(false, string, maximum, inclusive));
+    const maximum_1 = require("../string/maximum");
+    function Maximum(string, maximum, inclusive, subject = 'string') {
+        return new Error(maximum_1.default(false, string, maximum, inclusive, subject));
     }
     exports.default = Maximum;
 });

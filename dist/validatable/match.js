@@ -4,26 +4,22 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "@dikac/t-validator/validatable/readonly-merge", "@dikac/t-validator/validatable/callback-function", "./boolean/match"], factory);
+        define(["require", "exports", "../value/match", "@dikac/t-object/value/value/memoize-getter"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const readonly_merge_1 = require("@dikac/t-validator/validatable/readonly-merge");
-    const callback_function_1 = require("@dikac/t-validator/validatable/callback-function");
-    const match_1 = require("./boolean/match");
-    class Match extends readonly_merge_1.default {
-        constructor(number, match, message) {
-            let container = {
-                pattern: match,
-                value: number,
-            };
-            let msg = callback_function_1.default(container, match_1.default, () => message(this));
-            super(container, msg, msg);
-            this.pattern = match;
+    const match_1 = require("../value/match");
+    const memoize_getter_1 = require("@dikac/t-object/value/value/memoize-getter");
+    class Match extends match_1.default {
+        constructor(value, pattern, messageFactory) {
+            super(value, pattern);
+            this.value = value;
+            this.pattern = pattern;
+            this.messageFactory = messageFactory;
         }
-        valueOf() {
-            return this.value;
+        get message() {
+            return memoize_getter_1.default(this, 'message', this.messageFactory(this));
         }
     }
     exports.default = Match;

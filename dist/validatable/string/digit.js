@@ -4,12 +4,12 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../../boolean/string/digit"], factory);
+        define(["require", "exports", "../../assert/string/digit"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const digit_1 = require("../../boolean/string/digit");
+    const digit_1 = require("../../assert/string/digit");
     function Digit(object) {
         return digit_1.default(object.valid, object.value);
     }

@@ -4,12 +4,12 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../../boolean/string/match"], factory);
+        define(["require", "exports", "../../assert/string/match"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const match_1 = require("../../boolean/string/match");
+    const match_1 = require("../../assert/string/match");
     function Match(object) {
         return match_1.default(object.valid, object.value, object.pattern);
     }

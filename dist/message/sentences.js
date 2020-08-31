@@ -11,7 +11,7 @@
     Object.defineProperty(exports, "__esModule", { value: true });
     const not_empty_1 = require("../boolean/not-empty");
     class Sentences {
-        constructor(valid, value, expectation, type) {
+        constructor(valid, value = [], expectation = { invalid: [], valid: [] }, type = []) {
             this.valid = valid;
             this.value = value;
             this.expectation = expectation;

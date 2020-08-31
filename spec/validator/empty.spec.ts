@@ -2,6 +2,7 @@ import ALPHABET from "../../dist/alphabet";
 import DIGIT from "../../dist/digit";
 import Empty from "../../dist/validator/empty";
 import EmptyMessage from "../../dist/validatable/string/empty";
+import EmptyMessageArgument from "../../dist/assert/string/empty";
 
 it("enable console log", () => { spyOn(console, 'log').and.callThrough()});
 
@@ -58,11 +59,7 @@ for(let [value, [valid, message]] of map) {
             expect(validatable.valid).toBe(valid);
             expect(validatable.value).toBe(value);
 
-            if(validatable.valid) {
-                expect(validatable.message).toBe('string is empty');
-            } else {
-                expect(validatable.message).toBe('string must empty');
-            }
+            expect(validatable.message).toBe(EmptyMessageArgument(validatable.valid, validatable.value));
         });
 
     });

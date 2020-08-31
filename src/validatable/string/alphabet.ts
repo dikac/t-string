@@ -1,6 +1,6 @@
 import Value from "@dikac/t-value/value";
 import Validatable from "@dikac/t-validatable/validatable";
-import AlphabetMessage from "../../boolean/string/alphabet";
+import AlphabetMessage from "../../assert/string/alphabet";
 
 export default function Alphabet(object : Readonly<Value<string> & Validatable>) : string {
 

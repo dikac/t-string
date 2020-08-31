@@ -2,6 +2,7 @@ import ALPHABET from "../../dist/alphabet";
 import DIGIT from "../../dist/digit";
 import Digit from "../../dist/validator/digit";
 import DigitMessage from "../../dist/validatable/string/digit";
+import DigitMessageArgument from "../../dist/assert/string/digit";
 
 it("enable console log", () => { spyOn(console, 'log').and.callThrough()});
 
@@ -56,11 +57,7 @@ for(let [value, [valid, message]] of map) {
         expect(validatable.valid).toBe(valid);
         expect(validatable.value).toBe(value);
 
-        if(validatable.valid) {
-            expect(validatable.message).toBe('string is digit');
-        } else {
-            expect(validatable.message).toBe('string is not digit');
-        }
+        expect(validatable.message).toBe(DigitMessageArgument(validatable.valid, validatable.value));
     });
 }
 

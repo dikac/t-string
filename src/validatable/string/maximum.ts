@@ -1,6 +1,6 @@
 import Value from "@dikac/t-value/value";
 import Validatable from "@dikac/t-validatable/validatable";
-import MaximumMessage from "../../boolean/string/maximum";
+import MaximumMessage from "../../assert/string/maximum";
 import MaximumNumber from "@dikac/t-number/maximum/maximum";
 import Inclusive from "@dikac/t-number/inclusive/inclusive";
 

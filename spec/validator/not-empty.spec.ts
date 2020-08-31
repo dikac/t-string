@@ -2,6 +2,7 @@ import ALPHABET from "../../dist/alphabet";
 import DIGIT from "../../dist/digit";
 import NotEmpty from "../../dist/validator/not-empty";
 import NotEmptyMessage from "../../dist/validatable/string/not-empty";
+import NotEmptyMessageArgument from "../../dist/assert/string/not-empty";
 
 it("enable console log", () => { spyOn(console, 'log').and.callThrough()});
 
@@ -60,11 +61,7 @@ for(let [value, [valid, message]] of map) {
             expect(validatable.valid).toBe(!valid);
             expect(validatable.value).toBe(value);
 
-            if(validatable.valid) {
-                expect(validatable.message).toBe('string is not empty');
-            } else {
-                expect(validatable.message).toBe('string must not empty');
-            }
+            expect(validatable.message).toBe(NotEmptyMessageArgument(validatable.valid, validatable.value));
         });
     });
 

@@ -4,14 +4,18 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../boolean/not-empty"], factory);
+        define(["require", "exports", "../boolean/not-empty", "../trim"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     const not_empty_1 = require("../boolean/not-empty");
+    const trim_1 = require("../trim");
     class Sentence {
-        constructor(valid, value, expectation, type) {
+        constructor(valid, value = 'value', expectation = {
+            invalid: 'is not',
+            valid: 'is'
+        }, type = 'valid') {
             this.valid = valid;
             this.value = value;
             this.expectation = expectation;
@@ -28,7 +32,7 @@
             messages.push(this.value);
             messages.push(this.valid ? this.expectation.valid : this.expectation.invalid);
             messages.push(this.type);
-            messages = messages.filter(not_empty_1.default);
+            messages = messages.filter(not_empty_1.default).map((message) => trim_1.default(message));
             return messages.join(' ');
         }
     }

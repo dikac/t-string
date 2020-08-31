@@ -4,14 +4,14 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../../boolean/string/minimum"], factory);
+        define(["require", "exports", "../string/minimum"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const minimum_1 = require("../../boolean/string/minimum");
-    function Minimum(string, minimum, inclusive) {
-        return new Error(minimum_1.default(false, string, minimum, inclusive));
+    const minimum_1 = require("../string/minimum");
+    function Minimum(string, minimum, inclusive, subject = 'string') {
+        return new Error(minimum_1.default(false, string, minimum, inclusive, subject));
     }
     exports.default = Minimum;
 });

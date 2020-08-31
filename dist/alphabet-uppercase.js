@@ -9,7 +9,7 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const ALPHABET_UPPERCASE = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    exports.default = ALPHABET_UPPERCASE;
+    const AlphabetUppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    exports.default = AlphabetUppercase;
 });
 //# sourceMappingURL=alphabet-uppercase.js.map

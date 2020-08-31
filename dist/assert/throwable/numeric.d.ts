@@ -1,1 +1,1 @@
-export default function Numeric(string: string): Error;
+export default function Numeric(string: string, subject?: string): Error;

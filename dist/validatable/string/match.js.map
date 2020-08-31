@@ -1,1 +1,1 @@
-{"version":3,"file":"match.js","sourceRoot":"","sources":["../../../src/validatable/string/match.ts"],"names":[],"mappings":";;;;;;;;;;;IAEA,sDAAsD;IAEtD,SAAwB,KAAK,CACzB,MAAmE;QAGnE,OAAO,eAAY,CAAC,MAAM,CAAC,KAAK,EAAE,MAAM,CAAC,KAAK,EAAE,MAAM,CAAC,OAAO,CAAC,CAAA;IACnE,CAAC;IALD,wBAKC"}
+{"version":3,"file":"match.js","sourceRoot":"","sources":["../../../src/validatable/string/match.ts"],"names":[],"mappings":";;;;;;;;;;;IAEA,qDAAqD;IAErD,SAAwB,KAAK,CACzB,MAAmE;QAGnE,OAAO,eAAY,CAAC,MAAM,CAAC,KAAK,EAAE,MAAM,CAAC,KAAK,EAAE,MAAM,CAAC,OAAO,CAAC,CAAA;IACnE,CAAC;IALD,wBAKC"}

@@ -1,9 +1,10 @@
-import MatchType from "../../boolean/string/match";
+import MatchType from "../string/match";
 
 export default function Match(
     string : string,
-    pattern : RegExp
+    pattern : RegExp,
+    subject : string = 'string',
 ) : Error {
 
-    return new Error(MatchType(false, string, pattern))
+    return new Error(MatchType(false, string, pattern, subject))
 }

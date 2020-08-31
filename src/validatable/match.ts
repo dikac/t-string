@@ -1,37 +1,23 @@
 import Value from "@dikac/t-value/value";
 import Validatable from "@dikac/t-validatable/validatable";
 import Message from "@dikac/t-message/message";
-import MergeWrapper from "@dikac/t-validator/validatable/readonly-merge";
-import MessageCallback from "@dikac/t-validator/validatable/callback-function";
-import MatchBoolean from "./boolean/match";
-import ValueOf from "@dikac/t-value/value-of/value-of";
+import ValueMatch from "../value/match";
+import MemoizeGetter from "@dikac/t-object/value/value/memoize-getter";
 
 export default class Match<ValueT extends string, MessageT>
-    extends MergeWrapper<Value<ValueT>, Message<MessageT>, Validatable> implements ValueOf<string>
-
+    extends ValueMatch<ValueT>
+    implements Readonly<Message<MessageT>>
 {
-    readonly pattern : RegExp;
-
     constructor(
-        number : ValueT,
-        match : RegExp,
-        message : (result:Readonly<Value<ValueT> & Validatable>)=>MessageT,
+        readonly value : ValueT,
+        readonly pattern : RegExp,
+        private messageFactory : (result : Readonly<Value<ValueT> & Validatable>)=>MessageT,
     ) {
-
-        let container : Value<ValueT> & {pattern : RegExp} = {
-            pattern : match,
-            value : number,
-        };
-
-        let msg = MessageCallback(container, MatchBoolean, ()=>message(this));
-
-        super(container, msg, msg);
-
-        this.pattern = match;
+        super(value, pattern);
     }
 
-    valueOf() : string {
+    get message () : MessageT {
 
-        return this.value;
+        return MemoizeGetter(this, 'message', this.messageFactory(this));
     }
 }

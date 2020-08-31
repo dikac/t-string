@@ -4,12 +4,12 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../../boolean/string/alphabet"], factory);
+        define(["require", "exports", "../../assert/string/alphabet"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const alphabet_1 = require("../../boolean/string/alphabet");
+    const alphabet_1 = require("../../assert/string/alphabet");
     function Alphabet(object) {
         return alphabet_1.default(object.valid, object.value);
     }

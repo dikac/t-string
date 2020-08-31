@@ -9,7 +9,7 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const ALPHABET_LOWERCASE = 'abcdefghijklmnopqrstuvwxyz';
-    exports.default = ALPHABET_LOWERCASE;
+    const AlphabetLowercase = 'abcdefghijklmnopqrstuvwxyz';
+    exports.default = AlphabetLowercase;
 });
 //# sourceMappingURL=alphabet-lowercase.js.map

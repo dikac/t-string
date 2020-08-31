@@ -1,6 +1,9 @@
-import DigitType from "../../boolean/string/digit";
+import DigitType from "../string/digit";
 
-export default function Digit(string : string) : Error {
+export default function Digit(
+    string : string,
+    subject : string = 'string'
+) : Error {
 
-    return new Error(DigitType(false, string))
+    return new Error(DigitType(false, string, subject))
 }

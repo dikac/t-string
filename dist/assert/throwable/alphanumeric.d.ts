@@ -1,1 +1,1 @@
-export default function Alphanumeric(string: string): Error;
+export default function Alphanumeric(string: string, subject?: string): Error;

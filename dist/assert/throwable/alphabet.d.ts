@@ -1,1 +1,1 @@
-export default function Alphabet(string: string): Error;
+export default function Alphabet(string: string, subject?: string): Error;

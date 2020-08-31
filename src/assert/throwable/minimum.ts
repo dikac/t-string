@@ -1,10 +1,11 @@
-import MinimumType from "../../boolean/string/minimum";
+import MinimumType from "../string/minimum";
 
 export default function Minimum(
     string : string,
     minimum : number,
-    inclusive : boolean
+    inclusive : boolean,
+    subject : string = 'string',
 ) : Error {
 
-    return new Error(MinimumType(false, string, minimum, inclusive))
+    return new Error(MinimumType(false, string, minimum, inclusive, subject))
 }

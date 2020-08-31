@@ -1,6 +1,6 @@
 import Value from "@dikac/t-value/value";
 import Validatable from "@dikac/t-validatable/validatable";
-import MinimumMessage from "../../boolean/string/minimum";
+import MinimumMessage from "../../assert/string/minimum";
 import MinimumNumber from "@dikac/t-number/minimum/minimum";
 import Inclusive from "@dikac/t-number/inclusive/inclusive";
 

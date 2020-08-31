@@ -1,2 +1,2 @@
-const ALPHABET_LOWERCASE = 'abcdefghijklmnopqrstuvwxyz';
-export default ALPHABET_LOWERCASE;
+const AlphabetLowercase = 'abcdefghijklmnopqrstuvwxyz';
+export default AlphabetLowercase;

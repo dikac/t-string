@@ -7,9 +7,9 @@ export default class Sentences implements ValueOf<string>, Value<string[]>, Vali
 
     constructor(
         public valid : boolean,
-        public value : string[],
-        public expectation : {invalid : string[], valid : string[]},
-        public type : string[]
+        public value : string[] = [],
+        public expectation : {invalid : string[], valid : string[]} = {invalid : [], valid : []},
+        public type : string[] = []
     ) {
     }
 

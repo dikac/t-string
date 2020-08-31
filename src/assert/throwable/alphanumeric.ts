@@ -1,6 +1,9 @@
-import AlphanumericType from "../../boolean/string/alphanumeric";
+import AlphanumericType from "../string/alphanumeric";
 
-export default function Alphanumeric(string : string) : Error {
+export default function Alphanumeric(
+    string : string,
+    subject : string = 'string'
+) : Error {
 
-    return new Error(AlphanumericType(false, string))
+    return new Error(AlphanumericType(false, string, subject))
 }

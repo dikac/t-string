@@ -1,1 +1,1 @@
-export default function Digit(string: string): Error;
+export default function Digit(string: string, subject?: string): Error;

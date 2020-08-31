@@ -4,14 +4,14 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../../boolean/string/alphanumeric"], factory);
+        define(["require", "exports", "../string/alphanumeric"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const alphanumeric_1 = require("../../boolean/string/alphanumeric");
-    function Alphanumeric(string) {
-        return new Error(alphanumeric_1.default(false, string));
+    const alphanumeric_1 = require("../string/alphanumeric");
+    function Alphanumeric(string, subject = 'string') {
+        return new Error(alphanumeric_1.default(false, string, subject));
     }
     exports.default = Alphanumeric;
 });

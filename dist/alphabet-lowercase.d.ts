@@ -1,2 +1,2 @@
-declare const ALPHABET_LOWERCASE = "abcdefghijklmnopqrstuvwxyz";
-export default ALPHABET_LOWERCASE;
+declare const AlphabetLowercase = "abcdefghijklmnopqrstuvwxyz";
+export default AlphabetLowercase;

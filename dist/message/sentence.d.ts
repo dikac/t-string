@@ -9,10 +9,10 @@ export default class Sentence implements ValueOf<string>, Value<string>, Validat
         valid: string;
     };
     type: string;
-    constructor(valid: boolean, value: string, expectation: {
+    constructor(valid: boolean, value?: string, expectation?: {
         invalid: string;
         valid: string;
-    }, type: string);
+    }, type?: string);
     valueOf(): string;
     toString(): string;
     get message(): string;

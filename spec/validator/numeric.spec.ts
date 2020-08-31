@@ -1,6 +1,7 @@
 import ALPHABET from "../../dist/alphabet";
 import DIGIT from "../../dist/digit";
 import Numeric from "../../dist/validator/numeric";
+import NumericMessageArgument from "../../dist/assert/string/numeric";
 import NumericMessage from "../../dist/validatable/string/numeric";
 
 it("enable console log", () => { spyOn(console, 'log').and.callThrough()});
@@ -56,11 +57,7 @@ for(let [value, [valid, message]] of map) {
         expect(validatable.valid).toBe(valid);
         expect(validatable.value).toBe(value);
 
-        if(validatable.valid) {
-            expect(validatable.message).toBe('string is numeric');
-        } else {
-            expect(validatable.message).toBe('string is not numeric');
-        }
+        expect(validatable.message).toBe(NumericMessageArgument(validatable.valid, validatable.value));
     });
 }
 

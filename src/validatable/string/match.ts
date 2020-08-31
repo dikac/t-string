@@ -1,6 +1,6 @@
 import Value from "@dikac/t-value/value";
 import Validatable from "@dikac/t-validatable/validatable";
-import MatchMessage from "../../boolean/string/match";
+import MatchMessage from "../../assert/string/match";
 
 export default function Match(
     object : Readonly<Value<string> & Validatable> & {pattern : RegExp}

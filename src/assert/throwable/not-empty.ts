@@ -1,6 +1,9 @@
-import NotEmptyType from "../../boolean/string/not-empty";
+import NotEmptyType from "../string/not-empty";
 
-export default function NotEmpty(string : string) : Error {
+export default function NotEmpty(
+    string : string,
+    subject : string = 'string'
+) : Error {
 
-    return new Error(NotEmptyType(false, string))
+    return new Error(NotEmptyType(false, string, subject))
 }

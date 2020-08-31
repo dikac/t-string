@@ -1,2 +1,2 @@
-declare const DIGIT = "0123456789";
-export default DIGIT;
+declare const Digit = "0123456789";
+export default Digit;

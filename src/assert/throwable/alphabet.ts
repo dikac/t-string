@@ -1,6 +1,9 @@
-import AlphabetType from "../../boolean/string/alphabet";
+import AlphabetType from "../string/alphabet";
 
-export default function Alphabet(string : string) : Error {
+export default function Alphabet(
+    string : string,
+    subject : string = 'string'
+) : Error {
 
-    return new Error(AlphabetType(false, string))
+    return new Error(AlphabetType(false, string, subject))
 }

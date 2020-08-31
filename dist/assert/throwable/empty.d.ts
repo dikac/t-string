@@ -1,1 +1,1 @@
-export default function Empty(string: string): Error;
+export default function Empty(string: string, subject?: string): Error;

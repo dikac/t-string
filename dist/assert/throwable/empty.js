@@ -4,14 +4,14 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../../boolean/string/empty"], factory);
+        define(["require", "exports", "../string/empty"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const empty_1 = require("../../boolean/string/empty");
-    function Empty(string) {
-        return new Error(empty_1.default(false, string));
+    const empty_1 = require("../string/empty");
+    function Empty(string, subject = 'string') {
+        return new Error(empty_1.default(false, string, subject));
     }
     exports.default = Empty;
 });
