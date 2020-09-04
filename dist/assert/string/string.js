@@ -11,11 +11,11 @@
     Object.defineProperty(exports, "__esModule", { value: true });
     const sentences_is_1 = require("../../message/sentences-is");
     function String(valid, value, subject = 'type', conversion = value => typeof value) {
-        let sentence = new sentences_is_1.default(valid);
-        sentence.type.push('string');
-        sentence.value.push(subject);
+        let sentence = sentences_is_1.default(valid);
+        sentence.object.push('string');
+        sentence.subject.push(subject);
         if (!valid) {
-            sentence.value.push(conversion(value));
+            sentence.subject.push(conversion(value));
         }
         return sentence.message;
     }

@@ -9,9 +9,9 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    function Size(string) {
+    function Count(string) {
         return string.length;
     }
-    exports.default = Size;
+    exports.default = Count;
 });
-//# sourceMappingURL=size.js.map
+//# sourceMappingURL=count.js.map

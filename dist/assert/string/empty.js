@@ -12,11 +12,11 @@
     const truncate_1 = require("../../truncate");
     const sentences_is_1 = require("../../message/sentences-is");
     function Empty(valid, value, subject = 'string') {
-        let sentence = new sentences_is_1.default(valid);
-        sentence.type.push('empty');
-        sentence.value.push(subject);
+        let sentence = sentences_is_1.default(valid);
+        sentence.object.push('empty');
+        sentence.subject.push(subject);
         if (!valid) {
-            sentence.value.push(truncate_1.default(value, 8));
+            sentence.subject.push(truncate_1.default(value, 8));
         }
         return sentence.message;
     }

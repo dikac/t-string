@@ -4,15 +4,15 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../validatable/maximum", "../number/size"], factory);
+        define(["require", "exports", "../validatable/maximum", "../number/count"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     const maximum_1 = require("../validatable/maximum");
-    const size_1 = require("../number/size");
+    const count_1 = require("../number/count");
     class Maximum {
-        constructor(maximum, inclusive, message, converter = size_1.default) {
+        constructor(maximum, inclusive, message, converter = count_1.default) {
             this.maximum = maximum;
             this.inclusive = inclusive;
             this.message = message;

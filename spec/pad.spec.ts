@@ -1,4 +1,4 @@
-import Padding from "../dist/padding";
+import Padding from "../dist/pad";
 import PaddingOption from "../dist/padding/padding";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});

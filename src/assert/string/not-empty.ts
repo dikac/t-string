@@ -8,16 +8,16 @@ export default function NotEmpty(
 ) : string {
 
     let sentence = new Sentence(valid);
-    sentence.expectation = {
+    sentence.predicate = {
         invalid : 'is not',
         valid : 'is'
     };
-    sentence.value = subject;
-    sentence.type = 'empty';
+    sentence.subject = subject;
+    sentence.object = 'empty';
 
     if(!valid) {
 
-        sentence.value = [subject, Truncate(value, 5)].join(' ');
+        sentence.subject = [subject, Truncate(value, 5)].join(' ');
     }
 
     return sentence.message;

@@ -4,15 +4,15 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "./boolean/minimum", "../number/size"], factory);
+        define(["require", "exports", "./boolean/minimum", "../number/count"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     const minimum_1 = require("./boolean/minimum");
-    const size_1 = require("../number/size");
+    const count_1 = require("../number/count");
     class Minimum {
-        constructor(value, minimum, inclusive, message, converter = size_1.default) {
+        constructor(value, minimum, inclusive, message, converter = count_1.default) {
             this.value = value;
             this.minimum = minimum;
             this.inclusive = inclusive;

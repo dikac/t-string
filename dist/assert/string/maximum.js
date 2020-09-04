@@ -12,19 +12,19 @@
     const sentences_1 = require("../../message/sentences");
     function Maximum(valid, string, maximum, inclusive, subject = 'string') {
         let sentence = new sentences_1.default(valid);
-        sentence.value.push(subject);
-        sentence.value.push('length');
+        sentence.subject.push(subject);
+        sentence.subject.push('length');
         if (valid) {
-            sentence.expectation.valid.push(`is lower`);
+            sentence.predicate.valid.push(`is lower`);
         }
         else {
-            sentence.expectation.invalid.push(`must lower`);
+            sentence.predicate.invalid.push(`must lower`);
         }
         if (inclusive) {
-            sentence.expectation.valid.push(`or equal`);
-            sentence.expectation.invalid.push(`or equal`);
+            sentence.predicate.valid.push(`or equal`);
+            sentence.predicate.invalid.push(`or equal`);
         }
-        sentence.type.push('than', maximum.toString());
+        sentence.object.push('than', maximum.toString());
         return sentence.message;
     }
     exports.default = Maximum;

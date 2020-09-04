@@ -1,13 +1,13 @@
 import Guard from "../boolean/minimum";
 import Callback from "@dikac/t-function/assert/callback";
 import MinimumError from "./throwable/minimum";
-import Size from "../number/size";
+import Count from "../number/count";
 
 export default function Minimum(
     value : string,
     minimum : number,
     inclusive : boolean,
-    converter : (value:string)=>number = Size,
+    converter : (value:string)=>number = Count,
     error : (value:string, minimum:number, inclusive:boolean)=>Error = MinimumError
 ) : asserts value is string {
 

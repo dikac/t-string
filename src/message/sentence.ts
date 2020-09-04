@@ -1,22 +1,23 @@
 import ValueOf from "@dikac/t-value/value-of/value-of";
 import NotEmpty from "../boolean/not-empty";
-import Value from "@dikac/t-value/value";
 import Validatable from "@dikac/t-validatable/validatable";
 import Trim from "../trim";
 
-export default class Sentence implements ValueOf<string>, Value<string>, Validatable {
+ //  predicate object
+
+export default class Sentence implements ValueOf<string>, Validatable {
 
     constructor(
         public valid : boolean,
-        public value : string = 'value',
-        public expectation: {
+        public subject : string = 'value',
+        public predicate: {
             invalid : string,
             valid : string
         } = {
             invalid : 'is not',
             valid : 'is'
         },
-        public type : string = 'valid'
+        public object : string = 'valid'
     ) {
     }
 
@@ -34,11 +35,11 @@ export default class Sentence implements ValueOf<string>, Value<string>, Validat
 
         let messages : string[] = [];
 
-        messages.push(this.value);
+        messages.push(this.subject);
 
-        messages.push(this.valid ? this.expectation.valid : this.expectation.invalid);
+        messages.push(this.valid ? this.predicate.valid : this.predicate.invalid);
 
-        messages.push(this.type);
+        messages.push(this.object);
 
         messages = messages.filter(NotEmpty).map((message)=>Trim(message));
 

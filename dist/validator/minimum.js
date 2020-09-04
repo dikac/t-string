@@ -4,15 +4,15 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../validatable/minimum", "../number/size"], factory);
+        define(["require", "exports", "../validatable/minimum", "../number/count"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     const minimum_1 = require("../validatable/minimum");
-    const size_1 = require("../number/size");
+    const count_1 = require("../number/count");
     class Minimum {
-        constructor(minimum, inclusive, message, converter = size_1.default) {
+        constructor(minimum, inclusive, message, converter = count_1.default) {
             this.minimum = minimum;
             this.inclusive = inclusive;
             this.message = message;

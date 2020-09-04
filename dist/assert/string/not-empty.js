@@ -13,14 +13,14 @@
     const truncate_1 = require("../../truncate");
     function NotEmpty(valid, value, subject = 'string') {
         let sentence = new sentence_1.default(valid);
-        sentence.expectation = {
+        sentence.predicate = {
             invalid: 'is not',
             valid: 'is'
         };
-        sentence.value = subject;
-        sentence.type = 'empty';
+        sentence.subject = subject;
+        sentence.object = 'empty';
         if (!valid) {
-            sentence.value = [subject, truncate_1.default(value, 5)].join(' ');
+            sentence.subject = [subject, truncate_1.default(value, 5)].join(' ');
         }
         return sentence.message;
     }

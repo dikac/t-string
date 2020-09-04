@@ -11,15 +11,16 @@
     Object.defineProperty(exports, "__esModule", { value: true });
     const not_empty_1 = require("../boolean/not-empty");
     const trim_1 = require("../trim");
+    //  predicate object
     class Sentence {
-        constructor(valid, value = 'value', expectation = {
+        constructor(valid, subject = 'value', predicate = {
             invalid: 'is not',
             valid: 'is'
-        }, type = 'valid') {
+        }, object = 'valid') {
             this.valid = valid;
-            this.value = value;
-            this.expectation = expectation;
-            this.type = type;
+            this.subject = subject;
+            this.predicate = predicate;
+            this.object = object;
         }
         valueOf() {
             return this.message;
@@ -29,9 +30,9 @@
         }
         get message() {
             let messages = [];
-            messages.push(this.value);
-            messages.push(this.valid ? this.expectation.valid : this.expectation.invalid);
-            messages.push(this.type);
+            messages.push(this.subject);
+            messages.push(this.valid ? this.predicate.valid : this.predicate.invalid);
+            messages.push(this.object);
             messages = messages.filter(not_empty_1.default).map((message) => trim_1.default(message));
             return messages.join(' ');
         }

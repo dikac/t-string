@@ -5,7 +5,7 @@ import Value from "@dikac/t-value/value";
 import MaximumValidatable from "../validatable/maximum";
 import Inclusive from "@dikac/t-number/inclusive/inclusive";
 import MaximumNumber from "@dikac/t-number/maximum/maximum";
-import Size from "../number/size";
+import Count from "../number/count";
 import Return from "@dikac/t-validator/validatable/simple";
 
 export default class Maximum<MessageT>
@@ -19,7 +19,7 @@ export default class Maximum<MessageT>
         public maximum : number,
         public inclusive : boolean,
         public message : (result:Readonly<Value<string> & Inclusive & MaximumNumber & Validatable>)=>MessageT,
-        public converter : (value:string)=>number = Size,
+        public converter : (value:string)=>number = Count,
     ) {
     }
 

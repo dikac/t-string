@@ -7,13 +7,13 @@ export default function Empty(
     subject : string = 'string',
 ) : string {
 
-    let sentence = new SentencesIs(valid);
-    sentence.type.push('empty');
-    sentence.value.push(subject);
+    let sentence = SentencesIs(valid);
+    sentence.object.push('empty');
+    sentence.subject.push(subject);
 
     if(!valid) {
 
-        sentence.value.push(Truncate(value, 8));
+        sentence.subject.push(Truncate(value, 8));
 
     }
 

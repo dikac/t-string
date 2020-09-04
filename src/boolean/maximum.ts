@@ -1,5 +1,5 @@
 import Lower from "@dikac/t-number/boolean/lower"
-import Size from "../number/size";
+import Count from "../number/count";
 
 /**
  * check if {@param string} length/size is lower than {@param maximum} or equal if {@param inclusive} is "true"
@@ -10,7 +10,7 @@ export default function Maximum(
     string : string,
     maximum : number,
     inclusive : boolean,
-    converter : (value:string)=>number = Size
+    converter : (value:string)=>number = Count
 ) : boolean {
 
     return Lower(converter(string), maximum, inclusive)

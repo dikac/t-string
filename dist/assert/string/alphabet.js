@@ -12,13 +12,13 @@
     const match_1 = require("../../value/match");
     const sentences_is_1 = require("../../message/sentences-is");
     function Alphabet(valid, value, subject = 'string') {
-        let sentence = new sentences_is_1.default(valid);
-        sentence.type.push('alphabet');
-        sentence.value.push(subject);
+        let sentence = sentences_is_1.default(valid);
+        sentence.object.push('alphabet');
+        sentence.subject.push(subject);
         if (!valid) {
             let match = new match_1.default(value, /[^a-zA-Z]{1,5}/);
             if (match.valid) {
-                sentence.value.push(`..${match.match[0]}..`);
+                sentence.subject.push(`..${match.match[0]}..`);
             }
         }
         return sentence.message;

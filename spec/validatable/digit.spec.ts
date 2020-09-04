@@ -53,6 +53,7 @@ for(let [value, [valid, message]] of map) {
     it(message, ()=>{
 
         let validatable = new Digit(value, DigitMessage);
+
         expect(validatable.valid).toBe(valid);
         expect(validatable.value).toBe(value);
 

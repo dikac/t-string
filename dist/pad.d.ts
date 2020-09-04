@@ -1,2 +1,2 @@
-declare const Pad: (string: string, length: number, characters: string) => string;
-export default Pad;
+import PaddingOption from "./padding/padding";
+export default function Pad(string: string, padding: string, length: number, mode: PaddingOption): string;

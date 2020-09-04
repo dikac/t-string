@@ -4,7 +4,7 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../boolean/minimum", "@dikac/t-function/assert/callback", "./throwable/minimum", "../number/size"], factory);
+        define(["require", "exports", "../boolean/minimum", "@dikac/t-function/assert/callback", "./throwable/minimum", "../number/count"], factory);
     }
 })(function (require, exports) {
     "use strict";
@@ -12,8 +12,8 @@
     const minimum_1 = require("../boolean/minimum");
     const callback_1 = require("@dikac/t-function/assert/callback");
     const minimum_2 = require("./throwable/minimum");
-    const size_1 = require("../number/size");
-    function Minimum(value, minimum, inclusive, converter = size_1.default, error = minimum_2.default) {
+    const count_1 = require("../number/count");
+    function Minimum(value, minimum, inclusive, converter = count_1.default, error = minimum_2.default) {
         let guard = (value, minimum, inclusive) => {
             return minimum_1.default(value, minimum, inclusive, converter);
         };

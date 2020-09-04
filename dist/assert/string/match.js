@@ -13,10 +13,10 @@
     const truncate_1 = require("../../truncate");
     function Match(valid, value, pattern, subject = 'string') {
         let sentence = new sentence_1.default(valid);
-        sentence.expectation.invalid = 'does not match against';
-        sentence.expectation.valid = 'match against';
-        sentence.type = pattern.source;
-        sentence.value = [subject, truncate_1.default(value, 8)].join(' ');
+        sentence.predicate.invalid = 'does not match against';
+        sentence.predicate.valid = 'match against';
+        sentence.object = pattern.source;
+        sentence.subject = [subject, truncate_1.default(value, 8)].join(' ');
         return sentence.message;
     }
     exports.default = Match;

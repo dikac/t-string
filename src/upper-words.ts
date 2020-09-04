@@ -5,18 +5,23 @@ export default function UpperWords (
     splitters : string[]
 ) : string {
 
-    for(let splitter of splitters) {
+    if(splitters.length === 0) {
 
-        let temp : string[] = [];
-
-        for(let str of string.split(splitter)) {
-
-            temp.push(UpperFirst(str));
-        }
-
-        string = temp.join(splitter);
+        return string;
     }
 
-    return string;
+    const splitter = splitters[0];
+
+    let temp : string[] = [];
+
+    for(let str of string.split(splitter)) {
+
+        temp.push(UpperFirst(str));
+    }
+
+    string = temp.join(splitter);
+
+
+    return UpperWords(string, splitters.slice(1));
 
 }

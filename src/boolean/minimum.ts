@@ -1,5 +1,5 @@
 import Greater from "@dikac/t-number/boolean/greater"
-import Size from "../number/size";
+import Count from "../number/count";
 
 /**
  * check if {@param string} length/size is greater than {@param minimum} or equal if {@param inclusive} is "true"
@@ -10,7 +10,7 @@ export default function Minimum(
     string : string,
     minimum : number,
     inclusive : boolean,
-    converter : (value:string)=>number = Size
+    converter : (value:string)=>number = Count
 ) : boolean {
 
     return Greater(converter(string), minimum, inclusive)

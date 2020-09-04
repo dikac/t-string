@@ -4,16 +4,13 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "./pad-option"], factory);
+        define(["require", "exports", "voca"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const pad_option_1 = require("./pad-option");
-    const Padding = pad_option_1.default;
-    /**
-     * @deprecated use original instead
-     */
-    exports.default = Padding;
+    const voca_1 = require("voca");
+    const Grapheme = voca_1.countGraphemes;
+    exports.default = Grapheme;
 });
-//# sourceMappingURL=padding.js.map
+//# sourceMappingURL=grapheme.js.map

@@ -4,7 +4,7 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../boolean/maximum", "@dikac/t-function/assert/callback", "./throwable/maximum", "../number/size"], factory);
+        define(["require", "exports", "../boolean/maximum", "@dikac/t-function/assert/callback", "./throwable/maximum", "../number/count"], factory);
     }
 })(function (require, exports) {
     "use strict";
@@ -12,8 +12,8 @@
     const maximum_1 = require("../boolean/maximum");
     const callback_1 = require("@dikac/t-function/assert/callback");
     const maximum_2 = require("./throwable/maximum");
-    const size_1 = require("../number/size");
-    function Maximum(value, maximum, inclusive, converter = size_1.default, error = maximum_2.default) {
+    const count_1 = require("../number/count");
+    function Maximum(value, maximum, inclusive, converter = count_1.default, error = maximum_2.default) {
         let guard = (value, maximum, inclusive) => {
             return maximum_1.default(value, maximum, inclusive, converter);
         };

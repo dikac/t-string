@@ -7,9 +7,9 @@ export default function Alphanumeric(
     subject : string = 'string'
 ) : string {
 
-    let sentence = new SentencesIs(valid);
-    sentence.type.push('alphanumeric');
-    sentence.value.push(subject);
+    let sentence = SentencesIs(valid);
+    sentence.object.push('alphanumeric');
+    sentence.subject.push(subject);
 
     if(!valid) {
 
@@ -17,7 +17,7 @@ export default function Alphanumeric(
 
         if(match.valid) {
 
-            sentence.value.push(`..${match.match[0]}..`)
+            sentence.subject.push(`..${match.match[0]}..`)
         }
     }
 

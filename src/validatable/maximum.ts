@@ -4,7 +4,7 @@ import Validatable from "@dikac/t-validatable/validatable";
 import Message from "@dikac/t-message/message";
 import MaximumObject from "./boolean/maximum";
 import Inclusive from "@dikac/t-number/inclusive/inclusive";
-import Size from "../number/size";
+import Count from "../number/count";
 import ValueOf from "@dikac/t-value/value-of/value-of";
 
 export default class Maximum<ValueT extends string, MessageT>
@@ -19,7 +19,7 @@ export default class Maximum<ValueT extends string, MessageT>
         readonly maximum : number,
         readonly inclusive : boolean,
         message : (result:Readonly<Value<ValueT> & Inclusive & MaximumNumber & Validatable>)=>MessageT,
-        readonly converter : (string:ValueT)=>number = Size,
+        readonly converter : (string:ValueT)=>number = Count,
     ) {
 
         this.messageFactory = message;

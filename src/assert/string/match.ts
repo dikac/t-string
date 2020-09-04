@@ -9,12 +9,12 @@ export default function Match(
 ) : string {
 
     let sentence = new Sentence(valid);
-    sentence.expectation.invalid = 'does not match against';
-    sentence.expectation.valid = 'match against';
+    sentence.predicate.invalid = 'does not match against';
+    sentence.predicate.valid = 'match against';
 
-    sentence.type = pattern.source;
+    sentence.object = pattern.source;
 
-    sentence.value = [subject, Truncate(value, 8)].join(' ');
+    sentence.subject = [subject, Truncate(value, 8)].join(' ');
 
     return sentence.message;
 }

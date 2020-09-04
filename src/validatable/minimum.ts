@@ -4,7 +4,7 @@ import Validatable from "@dikac/t-validatable/validatable";
 import Message from "@dikac/t-message/message";
 import MinimumObject from "./boolean/minimum";
 import Inclusive from "@dikac/t-number/inclusive/inclusive";
-import Size from "../number/size";
+import Count from "../number/count";
 import ValueOf from "@dikac/t-value/value-of/value-of";
 
 
@@ -20,7 +20,7 @@ export default class Minimum<ValueT extends string, MessageT>
         readonly minimum : number,
         readonly inclusive : boolean,
         message : (result:Readonly<Value<ValueT> & Inclusive & MinimumNumber & Validatable>)=>MessageT,
-        readonly converter : (value:ValueT)=>number = Size,
+        readonly converter : (value:ValueT)=>number = Count,
     ) {
 
         this.valid = MinimumObject(this);
