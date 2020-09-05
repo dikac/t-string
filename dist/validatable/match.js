@@ -4,13 +4,13 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../value/match", "@dikac/t-object/value/value/memoize-getter"], factory);
+        define(["require", "exports", "../value/match", "@dikac/t-object/value/set-getter"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     const match_1 = require("../value/match");
-    const memoize_getter_1 = require("@dikac/t-object/value/value/memoize-getter");
+    const set_getter_1 = require("@dikac/t-object/value/set-getter");
     class Match extends match_1.default {
         constructor(value, pattern, messageFactory) {
             super(value, pattern);
@@ -19,7 +19,7 @@
             this.messageFactory = messageFactory;
         }
         get message() {
-            return memoize_getter_1.default(this, 'message', this.messageFactory(this));
+            return set_getter_1.default(this, 'message', this.messageFactory(this));
         }
     }
     exports.default = Match;
