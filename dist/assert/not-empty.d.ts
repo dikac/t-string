@@ -1,1 +1,1 @@
-export default function Empty(value: string, error?: (value: string) => Error): asserts value is string;
+export default function NotEmpty(value: string, error?: (value: string) => Error): asserts value is string;

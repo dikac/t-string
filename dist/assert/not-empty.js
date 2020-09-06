@@ -12,9 +12,9 @@
     const not_empty_1 = require("../boolean/not-empty");
     const callback_1 = require("@dikac/t-function/assert/callback");
     const not_empty_2 = require("./throwable/not-empty");
-    function Empty(value, error = not_empty_2.default) {
+    function NotEmpty(value, error = not_empty_2.default) {
         callback_1.default(value, not_empty_1.default, error);
     }
-    exports.default = Empty;
+    exports.default = NotEmpty;
 });
 //# sourceMappingURL=not-empty.js.map
