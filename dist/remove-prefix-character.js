@@ -9,21 +9,15 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    /**
-     * append {@param character} to {@param string} if not exist
-     *
-     * @param string
-     * @param character
-     */
-    function SuffixCharacter(string, character) {
+    function RemovePrefixCharacter(string, character) {
         if (string.length !== 0) {
             character = character[0];
-            if (string[string.length - 1] !== character) {
-                return string + character;
+            if (string[0] === character) {
+                return string.slice(1);
             }
         }
         return string;
     }
-    exports.default = SuffixCharacter;
+    exports.default = RemovePrefixCharacter;
 });
-//# sourceMappingURL=suffix-character.js.map
+//# sourceMappingURL=remove-prefix-character.js.map

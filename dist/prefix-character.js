@@ -9,6 +9,12 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    /**
+     * prepend {@param character} to {@param string} if not exist
+     *
+     * @param string
+     * @param character
+     */
     function PrefixCharacter(string, character) {
         if (string.length !== 0) {
             character = character[0];
