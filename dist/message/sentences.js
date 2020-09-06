@@ -10,7 +10,18 @@
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     const not_empty_1 = require("../boolean/not-empty");
+    /**
+     * array version, create a string message, by constructing subject, predicate, object
+     *
+     * combine subject, predicate, object to create whole sentence
+     */
     class Sentences {
+        /**
+         * @param valid
+         * @param subject
+         * @param predicate
+         * @param object
+         */
         constructor(valid, subject = [], predicate = { invalid: [], valid: [] }, object = []) {
             this.valid = valid;
             this.subject = subject;

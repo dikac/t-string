@@ -1,10 +1,17 @@
 import Sentences from "./sentences";
 
+/**
+ * create {@see Sentences} with default predicate {invalid : ['is not'], valid : ['is']}
+ * @param valid
+ * @param subject
+ * @param predicate
+ * @param value
+ */
 export default function SentencesIs(
     valid : boolean,
-    value : string[] = [],
-    expectation : {invalid : string[], valid : string[]} = {invalid : ['is not'], valid : ['is']},
-    type : string[] = []
+    subject : string[] = [],
+    predicate : {invalid : string[], valid : string[]} = {invalid : ['is not'], valid : ['is']},
+    value : string[] = []
 ) {
-    return new Sentences(valid, value, expectation, type);
+    return new Sentences(valid, subject, predicate, value);
 }

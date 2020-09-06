@@ -10,8 +10,15 @@
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     const sentences_1 = require("./sentences");
-    function SentencesIs(valid, value = [], expectation = { invalid: ['is not'], valid: ['is'] }, type = []) {
-        return new sentences_1.default(valid, value, expectation, type);
+    /**
+     * create {@see Sentences} with default predicate {invalid : ['is not'], valid : ['is']}
+     * @param valid
+     * @param subject
+     * @param predicate
+     * @param value
+     */
+    function SentencesIs(valid, subject = [], predicate = { invalid: ['is not'], valid: ['is'] }, value = []) {
+        return new sentences_1.default(valid, subject, predicate, value);
     }
     exports.default = SentencesIs;
 });

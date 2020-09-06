@@ -11,8 +11,18 @@
     Object.defineProperty(exports, "__esModule", { value: true });
     const not_empty_1 = require("../boolean/not-empty");
     const trim_1 = require("../trim");
-    //  predicate object
+    /**
+     * create a string message, by constructing subject, predicate, object
+     *
+     * combine subject, predicate, object to create whole sentence
+     */
     class Sentence {
+        /**
+         * @param valid
+         * @param subject {default : 'value'}
+         * @param predicate {default : {invalid : 'is not', valid : 'is'}}
+         * @param object {default : 'valid'}
+         */
         constructor(valid, subject = 'value', predicate = {
             invalid: 'is not',
             valid: 'is'

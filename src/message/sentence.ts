@@ -3,10 +3,19 @@ import NotEmpty from "../boolean/not-empty";
 import Validatable from "@dikac/t-validatable/validatable";
 import Trim from "../trim";
 
- //  predicate object
-
+/**
+ * create a string message, by constructing subject, predicate, object
+ *
+ * combine subject, predicate, object to create whole sentence
+ */
 export default class Sentence implements ValueOf<string>, Validatable {
 
+    /**
+     * @param valid
+     * @param subject {default : 'value'}
+     * @param predicate {default : {invalid : 'is not', valid : 'is'}}
+     * @param object {default : 'valid'}
+     */
     constructor(
         public valid : boolean,
         public subject : string = 'value',
