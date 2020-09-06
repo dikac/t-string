@@ -1,3 +1,7 @@
 import ValidatableCallbacks from "@dikac/t-validator/validatable/callback";
-export default class Callback extends ValidatableCallbacks {
+import ValueOf from "@dikac/t-value/value-of/value-of";
+import ToString from "../to-string";
+export default class Callback<Type extends string, MessageType = unknown> extends ValidatableCallbacks<string, Type, MessageType> implements ValueOf<string>, ToString {
+    valueOf(): string;
+    toString(): string;
 }

@@ -11,6 +11,12 @@
     Object.defineProperty(exports, "__esModule", { value: true });
     const callback_1 = require("@dikac/t-validator/validatable/callback");
     class Callback extends callback_1.default {
+        valueOf() {
+            return this.value;
+        }
+        toString() {
+            return this.value;
+        }
     }
     exports.default = Callback;
 });
