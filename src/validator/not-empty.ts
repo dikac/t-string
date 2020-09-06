@@ -6,29 +6,29 @@ import NotEmptyValidatable from "../validatable/not-empty";
 import Instance from "@dikac/t-validator/validatable/validatable";
 import Return from "@dikac/t-validator/validatable/simple";
 
-export default class NotEmpty<MessageT>
+export default class NotEmpty<MessageType>
     implements
-        Validator<string, '', true, false, Readonly<Instance<string, MessageT>>>,
-        Message<(result:Readonly<Value<string> & Validatable>)=>MessageT>
+        Validator<string, '', true, false, Readonly<Instance<string, MessageType>>>,
+        Message<(result:Readonly<Value<string> & Validatable>)=>MessageType>
 {
 
     constructor(
-       public message : (result:Readonly<Value<string> & Validatable>)=>MessageT
+       public message : (result:Readonly<Value<string> & Validatable>)=>MessageType
     ) {
     }
 
     validate<Argument extends ''>(
         value: Argument
-    ) : Readonly<Instance<string, MessageT, false>>
+    ) : Readonly<Instance<string, MessageType, false>>
 
     validate<Argument extends string>(
         value: Argument
-    ) : Return<string, Argument, string, Readonly<Instance<string, MessageT>>>
+    ) : Return<string, Argument, string, Readonly<Instance<string, MessageType>>>
 
     validate<Argument extends string>(
         value: Argument
     ) {
-        return <Return<string, Argument, string, Readonly<Instance<string, MessageT>>>>
-            new NotEmptyValidatable<Argument, MessageT>(value, this.message);
+        return <Return<string, Argument, string, Readonly<Instance<string, MessageType>>>>
+            new NotEmptyValidatable<Argument, MessageType>(value, this.message);
     }
 }

@@ -6,14 +6,14 @@ import DigitValidatable from "../validatable/digit";
 import Return from "@dikac/t-validator/validatable/simple";
 import Instance from "@dikac/t-validator/validatable/validatable";
 
-export default class Digit<MessageT>
+export default class Digit<MessageType>
     implements
-        Validator<string, string, boolean, boolean, Readonly<Instance<string, MessageT>>>,
-        Message<(result:Readonly<Value<string>> & Readonly<Validatable>)=>MessageT>
+        Validator<string, string, boolean, boolean, Readonly<Instance<string, MessageType>>>,
+        Message<(result:Readonly<Value<string>> & Readonly<Validatable>)=>MessageType>
 {
 
     constructor(
-       public message : (result:Readonly<Value<string>> & Readonly<Validatable>)=>MessageT
+       public message : (result:Readonly<Value<string>> & Readonly<Validatable>)=>MessageType
     ) {
     }
 
@@ -21,9 +21,9 @@ export default class Digit<MessageT>
         Argument extends string
     >(
         value: Argument
-    ) : Return<string, Argument, string, Readonly<Instance<string, MessageT>>> {
+    ) : Return<string, Argument, string, Readonly<Instance<string, MessageType>>> {
 
-        return <Return<string, Argument, string, Readonly<Instance<string, MessageT>>>>
-            new DigitValidatable<Argument, MessageT>(value, this.message);
+        return <Return<string, Argument, string, Readonly<Instance<string, MessageType>>>>
+            new DigitValidatable<Argument, MessageType>(value, this.message);
     }
 }

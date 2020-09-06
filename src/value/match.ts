@@ -2,9 +2,9 @@ import Value from "@dikac/t-value/value";
 import Validatable from "@dikac/t-validatable/validatable";
 import ValueOf from "@dikac/t-value/value-of/value-of";
 
-export default class Match<ValueT extends string>
+export default class Match<ValueType extends string>
     implements
-        Readonly<Value<ValueT>>,
+        Readonly<Value<ValueType>>,
         Readonly<Validatable>,
         Readonly<ValueOf<string>>
 
@@ -13,7 +13,7 @@ export default class Match<ValueT extends string>
     readonly match : string[];
 
     constructor(
-        readonly value : ValueT,
+        readonly value : ValueType,
         readonly pattern : RegExp,
     ) {
 

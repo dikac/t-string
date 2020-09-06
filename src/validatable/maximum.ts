@@ -7,19 +7,19 @@ import Inclusive from "@dikac/t-number/inclusive/inclusive";
 import Count from "../number/count";
 import ValueOf from "@dikac/t-value/value-of/value-of";
 
-export default class Maximum<ValueT extends string, MessageT>
+export default class Maximum<ValueType extends string, MessageType>
     implements
-        Readonly<Inclusive & MaximumNumber & Value<ValueT> & Message<MessageT> & Validatable>, ValueOf<string>
+        Readonly<Inclusive & MaximumNumber & Value<ValueType> & Message<MessageType> & Validatable>, ValueOf<string>
 {
     readonly valid : boolean;
-    private messageFactory : (result:Readonly<Value<ValueT> & Inclusive & MaximumNumber & Validatable>)=>MessageT;
+    private messageFactory : (result:Readonly<Value<ValueType> & Inclusive & MaximumNumber & Validatable>)=>MessageType;
 
     constructor(
-        readonly value : ValueT,
+        readonly value : ValueType,
         readonly maximum : number,
         readonly inclusive : boolean,
-        message : (result:Readonly<Value<ValueT> & Inclusive & MaximumNumber & Validatable>)=>MessageT,
-        readonly converter : (string:ValueT)=>number = Count,
+        message : (result:Readonly<Value<ValueType> & Inclusive & MaximumNumber & Validatable>)=>MessageType,
+        readonly converter : (string:ValueType)=>number = Count,
     ) {
 
         this.messageFactory = message;
@@ -36,7 +36,7 @@ export default class Maximum<ValueT extends string, MessageT>
         return this.value;
     }
 
-    get message() : MessageT {
+    get message() : MessageType {
 
         return this.messageFactory(this);
     }

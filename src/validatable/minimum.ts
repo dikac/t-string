@@ -8,19 +8,19 @@ import Count from "../number/count";
 import ValueOf from "@dikac/t-value/value-of/value-of";
 
 
-export default class Minimum<ValueT extends string, MessageT>
+export default class Minimum<ValueType extends string, MessageType>
     implements
-        Readonly<Inclusive & MinimumNumber &  Value<ValueT> & Message<MessageT> & Validatable>, ValueOf<string>, ValueOf<string>
+        Readonly<Inclusive & MinimumNumber &  Value<ValueType> & Message<MessageType> & Validatable>, ValueOf<string>, ValueOf<string>
 {
     readonly valid : boolean;
-    private messageFactory : (result:Readonly<Value<ValueT> & Inclusive & MinimumNumber & Validatable>)=>MessageT;
+    private messageFactory : (result:Readonly<Value<ValueType> & Inclusive & MinimumNumber & Validatable>)=>MessageType;
 
     constructor(
-        readonly value : ValueT,
+        readonly value : ValueType,
         readonly minimum : number,
         readonly inclusive : boolean,
-        message : (result:Readonly<Value<ValueT> & Inclusive & MinimumNumber & Validatable>)=>MessageT,
-        readonly converter : (value:ValueT)=>number = Count,
+        message : (result:Readonly<Value<ValueType> & Inclusive & MinimumNumber & Validatable>)=>MessageType,
+        readonly converter : (value:ValueType)=>number = Count,
     ) {
 
         this.valid = MinimumObject(this);
@@ -37,7 +37,7 @@ export default class Minimum<ValueT extends string, MessageT>
         return this.value;
     }
 
-    get message() : MessageT {
+    get message() : MessageType {
 
         return this.messageFactory(this);
     }

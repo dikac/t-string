@@ -4,8 +4,8 @@ import Message from "@dikac/t-message/message";
 import Value from "@dikac/t-value/value";
 import Instance from "@dikac/t-validator/validatable/validatable";
 import Return from "@dikac/t-validator/validatable/simple";
-export default class Alphanumeric<MessageT> implements Validator<string, string, boolean, boolean, Readonly<Instance<string, MessageT>>>, Message<(result: Readonly<Value<string>> & Readonly<Validatable>) => MessageT> {
-    message: (result: Readonly<Value<string>> & Readonly<Validatable>) => MessageT;
-    constructor(message: (result: Readonly<Value<string>> & Readonly<Validatable>) => MessageT);
-    validate<Argument extends string>(value: Argument): Return<string, Argument, string, Readonly<Instance<string, MessageT>>>;
+export default class Alphanumeric<MessageType> implements Validator<string, string, boolean, boolean, Readonly<Instance<string, MessageType>>>, Message<(result: Readonly<Value<string>> & Readonly<Validatable>) => MessageType> {
+    message: (result: Readonly<Value<string>> & Readonly<Validatable>) => MessageType;
+    constructor(message: (result: Readonly<Value<string>> & Readonly<Validatable>) => MessageType);
+    validate<Argument extends string>(value: Argument): Return<string, Argument, string, Readonly<Instance<string, MessageType>>>;
 }

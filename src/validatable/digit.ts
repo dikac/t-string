@@ -4,17 +4,17 @@ import Message from "@dikac/t-message/message";
 import DigitFromObject from "../boolean/digit";
 import ValueOf from "@dikac/t-value/value-of/value-of";
 
-export default class Digit<ValueT extends string, MessageT>
+export default class Digit<ValueType extends string, MessageType>
     implements
-        Readonly<Value<ValueT> & Message<MessageT> & Validatable>, ValueOf<string>
+        Readonly<Value<ValueType> & Message<MessageType> & Validatable>, ValueOf<string>
 
 {
     readonly valid : boolean;
-    private messageFactory : (result:Readonly<Value<ValueT> & Validatable>)=>MessageT;
+    private messageFactory : (result:Readonly<Value<ValueType> & Validatable>)=>MessageType;
 
     constructor(
-        readonly value : ValueT,
-        message : (result:Readonly<Value<ValueT> & Validatable>)=>MessageT,
+        readonly value : ValueType,
+        message : (result:Readonly<Value<ValueType> & Validatable>)=>MessageType,
     ) {
 
         this.messageFactory = message;
@@ -27,7 +27,7 @@ export default class Digit<ValueT extends string, MessageT>
         return this.value;
     }
 
-    get message() : MessageT {
+    get message() : MessageType {
 
         return this.messageFactory(this);
     }

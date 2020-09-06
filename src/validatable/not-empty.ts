@@ -4,17 +4,17 @@ import Message from "@dikac/t-message/message";
 import NotEmptyBoolean from "./boolean/not-empty";
 import ValueOf from "@dikac/t-value/value-of/value-of";
 
-export default class NotEmpty<ValueT extends string, MessageT>
+export default class NotEmpty<ValueType extends string, MessageType>
     implements
-        Readonly<Value<ValueT> & Message<MessageT> & Validatable>, ValueOf<string>
+        Readonly<Value<ValueType> & Message<MessageType> & Validatable>, ValueOf<string>
 
 {
     readonly valid : boolean;
-    private messageFactory : (result:Readonly<Value<ValueT> & Validatable>)=>MessageT
+    private messageFactory : (result:Readonly<Value<ValueType> & Validatable>)=>MessageType
 
     constructor(
-        readonly value : ValueT,
-        message : (result:Readonly<Value<ValueT> & Validatable>)=>MessageT,
+        readonly value : ValueType,
+        message : (result:Readonly<Value<ValueType> & Validatable>)=>MessageType,
     ) {
 
         this.valid = NotEmptyBoolean(this);
@@ -32,7 +32,7 @@ export default class NotEmpty<ValueT extends string, MessageT>
         return this.value;
     }
 
-    get message() : MessageT {
+    get message() : MessageType {
 
         return this.messageFactory(this);
     }

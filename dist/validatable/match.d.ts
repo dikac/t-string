@@ -2,10 +2,10 @@ import Value from "@dikac/t-value/value";
 import Validatable from "@dikac/t-validatable/validatable";
 import Message from "@dikac/t-message/message";
 import ValueMatch from "../value/match";
-export default class Match<ValueT extends string, MessageT> extends ValueMatch<ValueT> implements Readonly<Message<MessageT>> {
-    readonly value: ValueT;
+export default class Match<ValueType extends string, MessageType> extends ValueMatch<ValueType> implements Readonly<Message<MessageType>> {
+    readonly value: ValueType;
     readonly pattern: RegExp;
     private messageFactory;
-    constructor(value: ValueT, pattern: RegExp, messageFactory: (result: Readonly<Value<ValueT> & Validatable>) => MessageT);
-    get message(): MessageT;
+    constructor(value: ValueType, pattern: RegExp, messageFactory: (result: Readonly<Value<ValueType> & Validatable>) => MessageType);
+    get message(): MessageType;
 }
