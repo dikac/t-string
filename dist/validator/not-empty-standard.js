@@ -1,3 +1,6 @@
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 (function (factory) {
     if (typeof module === "object" && typeof module.exports === "object") {
         var v = factory(require, exports);
@@ -9,8 +12,8 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const not_empty_1 = require("./not-empty");
-    const not_empty_2 = require("../validatable/string/not-empty");
+    const not_empty_1 = __importDefault(require("./not-empty"));
+    const not_empty_2 = __importDefault(require("../validatable/string/not-empty"));
     function NotEmptyStandard() {
         return new not_empty_1.default(not_empty_2.default);
     }

@@ -1,3 +1,6 @@
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 (function (factory) {
     if (typeof module === "object" && typeof module.exports === "object") {
         var v = factory(require, exports);
@@ -9,8 +12,8 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const remove_prefix_character_1 = require("./remove-prefix-character");
-    const remove_suffix_character_1 = require("./remove-suffix-character");
+    const remove_prefix_character_1 = __importDefault(require("./remove-prefix-character"));
+    const remove_suffix_character_1 = __importDefault(require("./remove-suffix-character"));
     /**
      * remove {@param prefix} from start and {@param suffix} from end of {@param string}
      *

@@ -1,8 +1,11 @@
 /**
+ * wrapper for {@see truncate}
+ *
  * @param string
  * @param length
- * @param end
- * default "..."
+ * @param omission
+ * @default "..."
+ *
+ * @param separator
  */
-declare const Truncate: (string: string, length: number, end?: string) => string;
-export default Truncate;
+export default function Truncate(string: string, length: number, omission?: string, separator?: RegExp | string): string;

@@ -4,13 +4,13 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "voca"], factory);
+        define(["require", "exports", "lodash"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const voca_1 = require("voca");
-    const CamelCase = voca_1.camelCase;
+    const lodash_1 = require("lodash");
+    const CamelCase = lodash_1.camelCase;
     exports.default = CamelCase;
 });
 //# sourceMappingURL=camel-case.js.map

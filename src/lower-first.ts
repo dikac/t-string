@@ -1,6 +1,4 @@
-import {decapitalize} from "voca";
+import {lowerFirst} from "lodash";
 
-export default function UpperFirst (string : string) : string {
-
-    return decapitalize(string);
-}
+const LowerFirst : (string : string) => string = lowerFirst;
+export default LowerFirst;

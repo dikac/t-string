@@ -1,3 +1,6 @@
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 (function (factory) {
     if (typeof module === "object" && typeof module.exports === "object") {
         var v = factory(require, exports);
@@ -9,8 +12,8 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const truncate_1 = require("../../truncate");
-    const sentences_is_1 = require("../../message/sentences-is");
+    const truncate_1 = __importDefault(require("../../truncate"));
+    const sentences_is_1 = __importDefault(require("../../message/sentences-is"));
     function Empty(valid, value, subject = 'string') {
         let sentence = sentences_is_1.default(valid);
         sentence.object.push('empty');

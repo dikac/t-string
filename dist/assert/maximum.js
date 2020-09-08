@@ -1,3 +1,6 @@
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 (function (factory) {
     if (typeof module === "object" && typeof module.exports === "object") {
         var v = factory(require, exports);
@@ -9,10 +12,10 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const maximum_1 = require("../boolean/maximum");
-    const callback_1 = require("@dikac/t-function/assert/callback");
-    const maximum_2 = require("./throwable/maximum");
-    const count_1 = require("../number/count");
+    const maximum_1 = __importDefault(require("../boolean/maximum"));
+    const callback_1 = __importDefault(require("@dikac/t-function/assert/callback"));
+    const maximum_2 = __importDefault(require("./throwable/maximum"));
+    const count_1 = __importDefault(require("../number/count"));
     function Maximum(value, maximum, inclusive, converter = count_1.default, error = maximum_2.default) {
         let guard = (value, maximum, inclusive) => {
             return maximum_1.default(value, maximum, inclusive, converter);

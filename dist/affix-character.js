@@ -1,3 +1,6 @@
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 (function (factory) {
     if (typeof module === "object" && typeof module.exports === "object") {
         var v = factory(require, exports);
@@ -9,9 +12,9 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const padding_1 = require("./padding/padding");
-    const prefix_character_1 = require("./prefix-character");
-    const suffix_character_1 = require("./suffix-character");
+    const padding_1 = __importDefault(require("./padding/padding"));
+    const prefix_character_1 = __importDefault(require("./prefix-character"));
+    const suffix_character_1 = __importDefault(require("./suffix-character"));
     function AffixCharacter(string, character, padding) {
         switch (padding) {
             case padding_1.default.PREFIX:

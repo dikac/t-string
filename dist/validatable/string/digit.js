@@ -1,3 +1,6 @@
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 (function (factory) {
     if (typeof module === "object" && typeof module.exports === "object") {
         var v = factory(require, exports);
@@ -9,7 +12,7 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const digit_1 = require("../../assert/string/digit");
+    const digit_1 = __importDefault(require("../../assert/string/digit"));
     function Digit(object) {
         return digit_1.default(object.valid, object.value);
     }

@@ -1,3 +1,6 @@
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 (function (factory) {
     if (typeof module === "object" && typeof module.exports === "object") {
         var v = factory(require, exports);
@@ -9,8 +12,8 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const maximum_1 = require("../validatable/maximum");
-    const count_1 = require("../number/count");
+    const maximum_1 = __importDefault(require("../validatable/maximum"));
+    const count_1 = __importDefault(require("../number/count"));
     class Maximum {
         constructor(maximum, inclusive, message, converter = count_1.default) {
             this.maximum = maximum;

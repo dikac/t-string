@@ -1,6 +1,6 @@
 {
   "name": "@dikac/t-string",
-  "version": "0.13.6",
+  "version": "0.13.7",
   "description": "Typescript string",
   "dependencies": {
     "@dikac/deployer": "^0.1.5",
@@ -11,9 +11,11 @@
     "@dikac/t-validatable": "^0.18.8",
     "@dikac/t-validator": "^0.16.5",
     "@dikac/t-value": "^0.12.6",
+    "@types/lodash": "^4.14.161",
     "@types/voca": "^1.4.0",
-    "ts-toolbelt": "^6.15.5",
-    "voca": "^1.4.0"
+    "grapheme-splitter": "^1.0.4",
+    "lodash": "^4.17.20",
+    "ts-toolbelt": "^6.15.5"
   },
   "devDependencies": {
     "@types/jasmine": "^3.5.14",

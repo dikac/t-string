@@ -1,3 +1,6 @@
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 (function (factory) {
     if (typeof module === "object" && typeof module.exports === "object") {
         var v = factory(require, exports);
@@ -9,8 +12,8 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const alphabet_1 = require("./alphabet");
-    const alphabet_2 = require("../validatable/string/alphabet");
+    const alphabet_1 = __importDefault(require("./alphabet"));
+    const alphabet_2 = __importDefault(require("../validatable/string/alphabet"));
     function AlphabetStandard() {
         return new alphabet_1.default(alphabet_2.default);
     }

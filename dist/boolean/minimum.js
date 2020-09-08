@@ -1,3 +1,6 @@
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 (function (factory) {
     if (typeof module === "object" && typeof module.exports === "object") {
         var v = factory(require, exports);
@@ -9,8 +12,8 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const greater_1 = require("@dikac/t-number/boolean/greater");
-    const count_1 = require("../number/count");
+    const greater_1 = __importDefault(require("@dikac/t-number/boolean/greater"));
+    const count_1 = __importDefault(require("../number/count"));
     /**
      * check if {@param string} length/size is greater than {@param minimum} or equal if {@param inclusive} is "true"
      *

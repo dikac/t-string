@@ -1,5 +1,5 @@
-import {trimLeft} from "voca";
+import {trimStart} from "lodash";
 
-const TrimPrefix : (string : string, characters ?: string) => string = trimLeft;
+const TrimPrefix : (string : string, characters ?: string) => string = trimStart;
 export default TrimPrefix;
 

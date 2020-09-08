@@ -1,1 +1,1 @@
-{"version":3,"file":"kebab-case.js","sourceRoot":"","sources":["../src/kebab-case.ts"],"names":[],"mappings":";;;;;;;;;;;IAAA,+BAA+B;IAE/B,MAAM,SAAS,GAAiC,gBAAS,CAAC;IAC1D,kBAAe,SAAS,CAAC"}
+{"version":3,"file":"kebab-case.js","sourceRoot":"","sources":["../src/kebab-case.ts"],"names":[],"mappings":";;;;;;;;;;;IAAA,mCAAiC;IAEjC,MAAM,SAAS,GAAiC,kBAAS,CAAC;IAC1D,kBAAe,SAAS,CAAC"}

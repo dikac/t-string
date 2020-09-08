@@ -1,7 +1,7 @@
-import {capitalize} from "voca";
+import {upperFirst} from "lodash";
 
 /**
- * @see capitalize
+ * @see upperFirst
  */
-const UpperFirst : (string : string, restToLower ?: boolean) => string = capitalize;
+const UpperFirst : (string : string) => string = upperFirst;
 export default UpperFirst;

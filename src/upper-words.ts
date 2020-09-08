@@ -2,26 +2,14 @@ import UpperFirst from './upper-first';
 
 export default function UpperWords (
     string : string,
-    splitters : string[]
+    split : string|RegExp
 ) : string {
 
-    if(splitters.length === 0) {
+    for (let separator of string.match(split) || []) {
 
-        return string;
+        string = string.split(separator).map(UpperFirst).join(separator);
     }
 
-    const splitter = splitters[0];
-
-    let temp : string[] = [];
-
-    for(let str of string.split(splitter)) {
-
-        temp.push(UpperFirst(str));
-    }
-
-    string = temp.join(splitter);
-
-
-    return UpperWords(string, splitters.slice(1));
+    return UpperFirst(string);
 
 }

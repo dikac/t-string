@@ -1,5 +1,5 @@
 /**
- * @see capitalize
+ * @see upperFirst
  */
-declare const UpperFirst: (string: string, restToLower?: boolean) => string;
+declare const UpperFirst: (string: string) => string;
 export default UpperFirst;

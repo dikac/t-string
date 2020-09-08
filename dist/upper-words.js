@@ -1,3 +1,6 @@
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 (function (factory) {
     if (typeof module === "object" && typeof module.exports === "object") {
         var v = factory(require, exports);
@@ -9,18 +12,12 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const upper_first_1 = require("./upper-first");
-    function UpperWords(string, splitters) {
-        if (splitters.length === 0) {
-            return string;
+    const upper_first_1 = __importDefault(require("./upper-first"));
+    function UpperWords(string, split) {
+        for (let separator of string.match(split) || []) {
+            string = string.split(separator).map(upper_first_1.default).join(separator);
         }
-        const splitter = splitters[0];
-        let temp = [];
-        for (let str of string.split(splitter)) {
-            temp.push(upper_first_1.default(str));
-        }
-        string = temp.join(splitter);
-        return UpperWords(string, splitters.slice(1));
+        return upper_first_1.default(string);
     }
     exports.default = UpperWords;
 });

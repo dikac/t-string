@@ -1,4 +1,3 @@
-import Padding from "../dist/padding/padding";
 import Enclosed from "../dist/enclose";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});

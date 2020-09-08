@@ -1,3 +1,6 @@
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 (function (factory) {
     if (typeof module === "object" && typeof module.exports === "object") {
         var v = factory(require, exports);
@@ -9,7 +12,7 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const sentences_1 = require("../../message/sentences");
+    const sentences_1 = __importDefault(require("../../message/sentences"));
     function Minimum(valid, string, minimum, inclusive, subject = 'string') {
         let sentence = new sentences_1.default(valid);
         sentence.subject.push(subject);

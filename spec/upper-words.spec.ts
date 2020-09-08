@@ -6,17 +6,17 @@ it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 describe("construct & getter", function() {
 
 
-    let map : [string, string, string[]][] = [
-        ['abcde', 'Abcde', [' ']],
-        ['fghij', 'Fghij', [' ']],
-        ['abcde fghij', 'Abcde Fghij', [' ']],
-        ['abcde fghij+klmno', 'Abcde Fghij+klmno', [' ']],
-        ['abcde fghij+klmno', 'Abcde Fghij+Klmno', [' ', '+']],
+    let map : [string, string, RegExp|string][] = [
+        ['abcde', 'Abcde', ' '],
+        ['fghij', 'Fghij', ' '],
+        ['abcde fghij', 'Abcde Fghij', ' '],
+        ['abcde fghij+klmno', 'Abcde Fghij+klmno', ' '],
+        ['abcde fghij+klmno', 'Abcde Fghij+Klmno', /[ +]/g],
     ];
 
-    for(let [original, transformed, delimiters] of map) {
+    for(let [index, [original, transformed, delimiters]] of map.entries()) {
 
-        it(`uppercase words ${original}`, () => expect(transformed).toBe(UpperWords(original, delimiters)));
+        it(`[${index}] ${original}`, () => expect(transformed).toBe(UpperWords(original, delimiters)));
     }
 
 });

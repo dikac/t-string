@@ -5,7 +5,6 @@ it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 
 describe("construct & getter", function() {
 
-
     let map = new Map<string, string>();
     map.set('abcde', 'Abcde');
     map.set('fghij', 'Fghij');

@@ -1,1 +1,2 @@
-export default function UpperFirst(string: string): string;
+declare const LowerFirst: (string: string) => string;
+export default LowerFirst;

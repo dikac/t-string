@@ -4,19 +4,29 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "voca"], factory);
+        define(["require", "exports", "lodash"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const voca_1 = require("voca");
+    const lodash_1 = require("lodash");
     /**
+     * wrapper for {@see truncate}
+     *
      * @param string
      * @param length
-     * @param end
-     * default "..."
+     * @param omission
+     * @default "..."
+     *
+     * @param separator
      */
-    const Truncate = voca_1.truncate;
+    function Truncate(string, length, omission = '...', separator) {
+        return lodash_1.truncate(string, {
+            length: length,
+            omission: omission,
+            separator: separator
+        });
+    }
     exports.default = Truncate;
 });
 //# sourceMappingURL=truncate.js.map

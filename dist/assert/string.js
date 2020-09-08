@@ -1,3 +1,6 @@
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 (function (factory) {
     if (typeof module === "object" && typeof module.exports === "object") {
         var v = factory(require, exports);
@@ -9,9 +12,9 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const string_1 = require("../boolean/string");
-    const callback_1 = require("@dikac/t-function/assert/callback");
-    const string_2 = require("./throwable/string");
+    const string_1 = __importDefault(require("../boolean/string"));
+    const callback_1 = __importDefault(require("@dikac/t-function/assert/callback"));
+    const string_2 = __importDefault(require("./throwable/string"));
     function String(value, error = string_2.default) {
         callback_1.default(value, string_1.default, error);
     }

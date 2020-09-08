@@ -1,1 +1,1 @@
-{"version":3,"file":"match-standard.js","sourceRoot":"","sources":["../../src/validator/match-standard.ts"],"names":[],"mappings":";;;;;;;;;;;IAAA,mCAA4B;IAC5B,uDAAsD;IAEtD,SAAwB,aAAa,CAAC,OAAgB;QAElD,OAAO,IAAI,eAAK,CAAC,OAAO,EAAE,eAAW,CAAC,CAAC;IAC3C,CAAC;IAHD,gCAGC"}
+{"version":3,"file":"match-standard.js","sourceRoot":"","sources":["../../src/validator/match-standard.ts"],"names":[],"mappings":";;;;;;;;;;;;;;IAAA,oDAA4B;IAC5B,wEAAsD;IAEtD,SAAwB,aAAa,CAAC,OAAgB;QAElD,OAAO,IAAI,eAAK,CAAC,OAAO,EAAE,eAAW,CAAC,CAAC;IAC3C,CAAC;IAHD,gCAGC"}

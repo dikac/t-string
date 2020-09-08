@@ -1,3 +1,6 @@
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 (function (factory) {
     if (typeof module === "object" && typeof module.exports === "object") {
         var v = factory(require, exports);
@@ -9,7 +12,7 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const maximum_1 = require("../string/maximum");
+    const maximum_1 = __importDefault(require("../string/maximum"));
     function Maximum(string, maximum, inclusive, subject = 'string') {
         return new Error(maximum_1.default(false, string, maximum, inclusive, subject));
     }

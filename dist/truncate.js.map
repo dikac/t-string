@@ -1,1 +1,1 @@
-{"version":3,"file":"truncate.js","sourceRoot":"","sources":["../src/truncate.ts"],"names":[],"mappings":";;;;;;;;;;;IAAA,+BAA8B;IAE9B;;;;;OAKG;IACH,MAAM,QAAQ,GAAgE,eAAQ,CAAC;IAEvF,kBAAe,QAAQ,CAAC"}
+{"version":3,"file":"truncate.js","sourceRoot":"","sources":["../src/truncate.ts"],"names":[],"mappings":";;;;;;;;;;;IAAA,mCAAgC;IAEhC;;;;;;;;;OASG;IACH,SAAwB,QAAQ,CAAE,MAAe,EAAE,MAAe,EAAE,WAAoB,KAAK,EAAE,SAA0B;QAErH,OAAO,iBAAQ,CAAC,MAAM,EAAE;YACpB,MAAM,EAAG,MAAM;YACf,QAAQ,EAAG,QAAQ;YACnB,SAAS,EAAG,SAAS;SACxB,CAAC,CAAA;IACN,CAAC;IAPD,2BAOC"}

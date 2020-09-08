@@ -1,3 +1,6 @@
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 (function (factory) {
     if (typeof module === "object" && typeof module.exports === "object") {
         var v = factory(require, exports);
@@ -9,7 +12,7 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const sentences_is_1 = require("../../message/sentences-is");
+    const sentences_is_1 = __importDefault(require("../../message/sentences-is"));
     function String(valid, value, subject = 'type', conversion = value => typeof value) {
         let sentence = sentences_is_1.default(valid);
         sentence.object.push('string');

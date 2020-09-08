@@ -1,3 +1,6 @@
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 (function (factory) {
     if (typeof module === "object" && typeof module.exports === "object") {
         var v = factory(require, exports);
@@ -9,7 +12,7 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const numeric_1 = require("../string/numeric");
+    const numeric_1 = __importDefault(require("../string/numeric"));
     function Numeric(string, subject = 'string') {
         return new Error(numeric_1.default(false, string, subject));
     }

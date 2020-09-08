@@ -1,12 +1,22 @@
-import {truncate} from "voca";
+import {truncate} from "lodash";
 
 /**
+ * wrapper for {@see truncate}
+ *
  * @param string
  * @param length
- * @param end
- * default "..."
+ * @param omission
+ * @default "..."
+ *
+ * @param separator
  */
-const Truncate : (string : string, length : number, end?: string) => string = truncate;
+export default function Truncate (string : string, length : number, omission : string = '...', separator ?: RegExp|string)  : string {
 
-export default Truncate;
+    return truncate(string, {
+        length : length,
+        omission : omission,
+        separator : separator
+    })
+}
+
 

@@ -1,5 +1,5 @@
-import {padLeft} from "voca";
+import {padStart} from "lodash";
 
-const PadPrefix : (string : string, length : number, characters : string) => string = padLeft;
+const PadPrefix : (string : string, length : number, characters : string) => string = padStart;
 export default PadPrefix;
 

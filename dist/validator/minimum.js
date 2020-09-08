@@ -1,3 +1,6 @@
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 (function (factory) {
     if (typeof module === "object" && typeof module.exports === "object") {
         var v = factory(require, exports);
@@ -9,8 +12,8 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const minimum_1 = require("../validatable/minimum");
-    const count_1 = require("../number/count");
+    const minimum_1 = __importDefault(require("../validatable/minimum"));
+    const count_1 = __importDefault(require("../number/count"));
     class Minimum {
         constructor(minimum, inclusive, message, converter = count_1.default) {
             this.minimum = minimum;

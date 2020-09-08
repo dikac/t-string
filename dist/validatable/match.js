@@ -1,3 +1,6 @@
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 (function (factory) {
     if (typeof module === "object" && typeof module.exports === "object") {
         var v = factory(require, exports);
@@ -9,8 +12,8 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const match_1 = require("../value/match");
-    const set_getter_1 = require("@dikac/t-object/value/set-getter");
+    const match_1 = __importDefault(require("../value/match"));
+    const set_getter_1 = __importDefault(require("@dikac/t-object/value/set-getter"));
     class Match extends match_1.default {
         constructor(value, pattern, messageFactory) {
             super(value, pattern);

@@ -1,2 +1,1 @@
-declare const Grapheme: (string: string) => number;
-export default Grapheme;
+export default function Grapheme(string: string): number;
