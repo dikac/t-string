@@ -1,4 +1,4 @@
-import PaddingOption from "./padding/padding";
+import PaddingOption from "./affix/affix";
 import PadPrefix from "./pad-prefix";
 import PadSuffix from "./pad-suffix";
 import PadCircumfix from "./pad-circumfix";

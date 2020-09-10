@@ -1,4 +1,4 @@
-import Padding from "./padding/padding";
+import Affix from "./affix/affix";
 import PrefixCharacter from "./prefix-character";
 import SuffixCharacter from "./suffix-character";
 
@@ -12,17 +12,17 @@ import SuffixCharacter from "./suffix-character";
 export default function AffixCharacter(
     string : string,
     character : string,
-    padding : Padding
+    padding : Affix
 ) : string {
 
     switch (padding) {
-        case Padding.PREFIX:
+        case Affix.PREFIX:
             return PrefixCharacter(string, character);
 
-        case Padding.SUFFIX:
+        case Affix.SUFFIX:
             return SuffixCharacter(string, character);
 
-        case Padding.CIRCUMFIX:
+        case Affix.CIRCUMFIX:
             string = PrefixCharacter(string, character);
             return SuffixCharacter(string, character);
     }
