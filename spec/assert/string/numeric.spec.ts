@@ -5,7 +5,7 @@ it("enable console log", () => { spyOn(console, 'log').and.callThrough();});
 it('true valid', ()=>{
 
     expect(Numeric(true, '0123456789', 'value')).toBe(
-        'value is numeric'
+        'value is numeric.'
     );
 
 });
@@ -13,7 +13,7 @@ it('true valid', ()=>{
 it('true invalid', ()=>{
 
     expect(Numeric(true, '0123456789', 'value')).toBe(
-        'value is numeric'
+        'value is numeric.'
     );
 
 });
@@ -21,7 +21,7 @@ it('true invalid', ()=>{
 it('false valid', ()=>{
 
     expect(Numeric(false, '0123456789', 'value')).toBe(
-        'value is not numeric'
+        'value must numeric.'
     );
 
 });
@@ -29,7 +29,7 @@ it('false valid', ()=>{
 it('false invalid', ()=>{
 
     expect(Numeric(false, '0123ABCD456E789', 'value')).toBe(
-        'value ..ABCD.. is not numeric'
+        'value must numeric, contain "ABCD".'
     );
 
 });

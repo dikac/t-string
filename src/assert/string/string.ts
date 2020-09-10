@@ -1,4 +1,4 @@
-import SentencesIs from "../../message/sentences-is";
+import SentencesMust from "../../message/sentences-must";
 
 export default function String(
     valid : boolean,
@@ -7,13 +7,15 @@ export default function String(
     conversion : (value:unknown)=>string = value=>typeof value
 ) : string {
 
-    let sentence = SentencesIs(valid);
-    sentence.object.push('string');
+    let sentence = SentencesMust(valid);
+    sentence.expect.push('string');
     sentence.subject.push(subject);
+
+    sentence.comma.push('expect');
 
     if(!valid) {
 
-        sentence.subject.push(conversion(value));
+        sentence.actual.push('actual', conversion(value));
     }
 
     return sentence.message;

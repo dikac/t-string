@@ -5,7 +5,7 @@ it("enable console log", () => { spyOn(console, 'log').and.callThrough();});
 it('true valid', ()=>{
 
     expect(NotEmpty(true, '123456789', 'value')).toBe(
-        'value is empty'
+        'value is not empty string.'
     );
 
 });
@@ -13,7 +13,7 @@ it('true valid', ()=>{
 it('true invalid', ()=>{
 
     expect(NotEmpty(true, '', 'value')).toBe(
-        'value is empty'
+        'value is not empty string.'
     );
 
 });
@@ -21,7 +21,7 @@ it('true invalid', ()=>{
 it('false valid', ()=>{
 
     expect(NotEmpty(false, '123456789', 'value')).toBe(
-        'value 12... is not empty'
+        'value must not empty string.'
     );
 
 });
@@ -29,7 +29,7 @@ it('false valid', ()=>{
 it('false invalid', ()=>{
 
     expect(NotEmpty(false, '', 'value')).toBe(
-        'value is not empty'
+        'value must not empty string.'
     );
 
 });

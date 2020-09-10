@@ -1,5 +1,5 @@
 import Match from "../../value/match";
-import SentencesIs from "../../message/sentences-is";
+import SentencesMust from "../../message/sentences-must";
 
 export default function Alphanumeric(
     valid : boolean,
@@ -7,9 +7,10 @@ export default function Alphanumeric(
     subject : string = 'string'
 ) : string {
 
-    let sentence = SentencesIs(valid);
-    sentence.object.push('alphanumeric');
+    let sentence = SentencesMust(valid);
+    sentence.expect.push('alphanumeric');
     sentence.subject.push(subject);
+    sentence.comma.push('expect');
 
     if(!valid) {
 
@@ -17,7 +18,7 @@ export default function Alphanumeric(
 
         if(match.valid) {
 
-            sentence.subject.push(`..${match.match[0]}..`)
+            sentence.actual.push('contains', `"${match.match[0]}"`)
         }
     }
 

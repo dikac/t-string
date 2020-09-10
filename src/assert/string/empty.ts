@@ -1,5 +1,5 @@
 import Truncate from "../../truncate";
-import SentencesIs from "../../message/sentences-is";
+import SentencesMust from "../../message/sentences-must";
 
 export default function Empty(
     valid : boolean,
@@ -7,13 +7,15 @@ export default function Empty(
     subject : string = 'string',
 ) : string {
 
-    let sentence = SentencesIs(valid);
-    sentence.object.push('empty');
+    let sentence = SentencesMust(valid);
+    sentence.expect.push('empty', 'string');
     sentence.subject.push(subject);
 
-    if(!valid) {
+    sentence.comma.push('expect');
 
-        sentence.subject.push(Truncate(value, 8));
+    if(!valid && value.length) {
+
+        sentence.actual.push('actual', `"${Truncate(value, 8)}"`);
 
     }
 

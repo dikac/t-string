@@ -14,15 +14,18 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     Object.defineProperty(exports, "__esModule", { value: true });
     const sentences_1 = __importDefault(require("./sentences"));
     /**
-     * create {@see Sentences} with default predicate {invalid : ['is not'], valid : ['is']}
+     * create {@see Sentences} with some populated data
+     * {@see Sentences.reject} set to ['must']
+     * {@see Sentences.accept} set to ['is']
+     *
      * @param valid
      * @param subject
-     * @param predicate
-     * @param value
+     * @param expect
+     * @param actual
      */
-    function SentencesIs(valid, subject = [], predicate = { invalid: ['is not'], valid: ['is'] }, value = []) {
-        return new sentences_1.default(valid, subject, predicate, value);
+    function SentencesMust(valid, subject = [], expect = [], actual = []) {
+        return new sentences_1.default(valid, subject, expect, ['is'], ['must'], actual);
     }
-    exports.default = SentencesIs;
+    exports.default = SentencesMust;
 });
-//# sourceMappingURL=sentences-is.js.map
+//# sourceMappingURL=sentences-must.js.map

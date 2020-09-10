@@ -1,28 +1,22 @@
 import ValueOf from "@dikac/t-value/value-of/value-of";
 import Validatable from "@dikac/t-validatable/validatable";
 /**
- * create a string message, by constructing subject, predicate, object
- *
- * combine subject, predicate, object to create whole sentence
+ * string implementation of {@see Sentences}
  */
 export default class Sentence implements ValueOf<string>, Validatable {
     valid: boolean;
     subject: string;
-    predicate: {
-        invalid: string;
-        valid: string;
-    };
-    object: string;
+    expect: string;
+    actual: string;
+    accept: string;
+    reject: string;
+    accepts: ('subject' | 'expect' | 'reject' | 'accept' | 'actual')[];
+    rejects: ('subject' | 'expect' | 'reject' | 'accept' | 'actual')[];
+    comma: ('subject' | 'expect' | 'reject' | 'accept' | 'actual')[];
     /**
-     * @param valid
-     * @param subject {default : 'value'}
-     * @param predicate {default : {invalid : 'is not', valid : 'is'}}
-     * @param object {default : 'valid'}
+     * @see Sentences
      */
-    constructor(valid: boolean, subject?: string, predicate?: {
-        invalid: string;
-        valid: string;
-    }, object?: string);
+    constructor(valid: boolean, subject?: string, expect?: string, actual?: string, accept?: string, reject?: string, accepts?: ('subject' | 'expect' | 'reject' | 'accept' | 'actual')[], rejects?: ('subject' | 'expect' | 'reject' | 'accept' | 'actual')[], comma?: ('subject' | 'expect' | 'reject' | 'accept' | 'actual')[]);
     valueOf(): string;
     toString(): string;
     get message(): string;

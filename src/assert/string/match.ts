@@ -1,5 +1,6 @@
 import Sentence from "../../message/sentence";
 import Truncate from "../../truncate";
+import Sentences from "../../message/sentences";
 
 export default function Match(
     valid : boolean,
@@ -8,13 +9,14 @@ export default function Match(
     subject : string = 'string',
 ) : string {
 
-    let sentence = new Sentence(valid);
-    sentence.predicate.invalid = 'does not match against';
-    sentence.predicate.valid = 'match against';
+    let sentence = new Sentences(valid);
 
-    sentence.object = pattern.source;
+    sentence.reject.push('does not match against');
+    sentence.accept.push('match against');
 
-    sentence.subject = [subject, Truncate(value, 8)].join(' ');
+    sentence.expect.push(pattern.source);
+
+    sentence.subject.push(subject, `"${Truncate(value, 8)}"`);
 
     return sentence.message;
 }

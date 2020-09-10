@@ -7,33 +7,29 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../boolean/not-empty", "../trim"], factory);
+        define(["require", "exports", "./sentences"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const not_empty_1 = __importDefault(require("../boolean/not-empty"));
-    const trim_1 = __importDefault(require("../trim"));
+    const sentences_1 = __importDefault(require("./sentences"));
     /**
-     * create a string message, by constructing subject, predicate, object
-     *
-     * combine subject, predicate, object to create whole sentence
+     * string implementation of {@see Sentences}
      */
     class Sentence {
         /**
-         * @param valid
-         * @param subject {default : 'value'}
-         * @param predicate {default : {invalid : 'is not', valid : 'is'}}
-         * @param object {default : 'valid'}
+         * @see Sentences
          */
-        constructor(valid, subject = 'value', predicate = {
-            invalid: 'is not',
-            valid: 'is'
-        }, object = 'valid') {
+        constructor(valid, subject = '', expect = '', actual = '', accept = 'is', reject = 'must', accepts = ['subject', 'reject', 'accept', 'expect'], rejects = ['subject', 'reject', 'accept', 'expect', 'actual'], comma = []) {
             this.valid = valid;
             this.subject = subject;
-            this.predicate = predicate;
-            this.object = object;
+            this.expect = expect;
+            this.actual = actual;
+            this.accept = accept;
+            this.reject = reject;
+            this.accepts = accepts;
+            this.rejects = rejects;
+            this.comma = comma;
         }
         valueOf() {
             return this.message;
@@ -42,12 +38,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
             return this.message;
         }
         get message() {
-            let messages = [];
-            messages.push(this.subject);
-            messages.push(this.valid ? this.predicate.valid : this.predicate.invalid);
-            messages.push(this.object);
-            messages = messages.filter(not_empty_1.default).map((message) => trim_1.default(message));
-            return messages.join(' ');
+            return new sentences_1.default(this.valid, [this.subject], [this.expect], [this.accept], [this.reject], [this.actual], this.accepts, this.rejects, this.comma).message;
         }
     }
     exports.default = Sentence;

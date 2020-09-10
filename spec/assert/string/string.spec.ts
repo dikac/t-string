@@ -4,15 +4,15 @@ it("enable console log", () => { spyOn(console, 'log').and.callThrough();});
 
 let data = new Map<[boolean, any, string?], string>();
 
-data.set([true, 'string'], 'type is string');
-data.set([true, 'string', 'value'], 'value is string');
-data.set([true, []], 'type is string');
-data.set([true, {}], 'type is string');
+data.set([true, 'string'], 'type is string.');
+data.set([true, 'string', 'value'], 'value is string.');
+data.set([true, []], 'type is string.');
+data.set([true, {}], 'type is string.');
 
-data.set([false, 'string'], 'type string is not string');
-data.set([false, 'string', 'value'], 'value string is not string');
-data.set([false, []], 'type object is not string');
-data.set([false, {}], 'type object is not string');
+data.set([false, 'string'], 'type must string, actual string.');
+data.set([false, 'string', 'value'], 'value must string, actual string.');
+data.set([false, []], 'type must string, actual object.');
+data.set([false, {}], 'type must string, actual object.');
 
 
 let i = 0;

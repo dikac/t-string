@@ -1,5 +1,5 @@
 import Match from "../../value/match";
-import SentencesIs from "../../message/sentences-is";
+import SentencesMust from "../../message/sentences-must";
 
 export default function Alphabet(
     valid : boolean,
@@ -7,9 +7,11 @@ export default function Alphabet(
     subject : string = 'string'
 ) : string {
 
-    let sentence = SentencesIs(valid);
-    sentence.object.push('alphabet');
+    let sentence = SentencesMust(valid);
+    sentence.expect.push('alphabet');
     sentence.subject.push(subject);
+
+    sentence.comma.push('expect');
 
     if(!valid) {
 
@@ -17,7 +19,7 @@ export default function Alphabet(
 
        if(match.valid) {
 
-           sentence.subject.push(`..${match.match[0]}..`)
+           sentence.actual.push('contains', `"${match.match[0]}"`)
        }
     }
 

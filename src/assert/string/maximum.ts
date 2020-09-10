@@ -15,20 +15,20 @@ export default function Maximum(
 
     if(valid) {
 
-        sentence.predicate.valid.push(`is lower`);
+        sentence.accept.push(`is lower`);
 
     } else {
 
-        sentence.predicate.invalid.push(`must lower`);
+        sentence.reject.push(`must lower`);
     }
 
     if(inclusive) {
 
-        sentence.predicate.valid.push(`or equal`);
-        sentence.predicate.invalid.push(`or equal`);
+        sentence.expect.push(`or equal`);
+        //sentence.predicate.invalid.push(`or equal`);
     }
 
-    sentence.object.push('than', maximum.toString());
+    sentence.expect.push('than', maximum.toString());
 
     return sentence.message;
 }

@@ -18,16 +18,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
         sentence.subject.push(subject);
         sentence.subject.push('length');
         if (valid) {
-            sentence.predicate.valid.push(`is greater`);
+            sentence.accept.push(`is greater`);
         }
         else {
-            sentence.predicate.invalid.push(`must greater`);
+            sentence.reject.push(`must greater`);
         }
         if (inclusive) {
-            sentence.predicate.valid.push(`or equal`);
-            sentence.predicate.invalid.push(`or equal`);
+            sentence.expect.push(`or equal`);
         }
-        sentence.object.push('than', minimum.toString());
+        sentence.expect.push('than', minimum.toString());
         return sentence.message;
     }
     exports.default = Minimum;

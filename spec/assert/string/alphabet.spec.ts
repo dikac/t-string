@@ -5,7 +5,7 @@ it("enable console log", () => { spyOn(console, 'log').and.callThrough();});
 it('true valid', ()=>{
 
     expect(Alphabet(true, 'abcd', 'value')).toBe(
-        'value is alphabet'
+        'value is alphabet.'
     );
 
 });
@@ -13,7 +13,7 @@ it('true valid', ()=>{
 it('true invalid', ()=>{
 
     expect(Alphabet(true, '123456789', 'value')).toBe(
-        'value is alphabet'
+        'value is alphabet.'
     );
 
 });
@@ -21,7 +21,7 @@ it('true invalid', ()=>{
 it('false valid', ()=>{
 
     expect(Alphabet(false, 'abcded', 'value')).toBe(
-        'value is not alphabet'
+        'value must alphabet.'
     );
 
 });
@@ -29,7 +29,7 @@ it('false valid', ()=>{
 it('false invalid', ()=>{
 
     expect(Alphabet(false, '123456789', 'value')).toBe(
-        'value ..12345.. is not alphabet'
+        'value must alphabet, contains "12345".'
     );
 
 });
