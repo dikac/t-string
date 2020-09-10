@@ -7,15 +7,20 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../string/string"], factory);
+        define(["require", "exports", "../../message/sentence"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const string_1 = __importDefault(require("../string/string"));
-    function String(string, subject = 'type', conversion = value => typeof value) {
-        return new TypeError(string_1.default(false, string, subject, conversion));
+    const sentence_1 = __importDefault(require("../../message/sentence"));
+    function NotBlank(valid, value, subject = 'string') {
+        let sentence = new sentence_1.default(valid);
+        sentence.reject = 'must not';
+        sentence.accept = 'is not';
+        sentence.subject = subject;
+        sentence.expect = 'blank string';
+        return sentence.message;
     }
-    exports.default = String;
+    exports.default = NotBlank;
 });
-//# sourceMappingURL=string.js.map
+//# sourceMappingURL=not-blank.js.map

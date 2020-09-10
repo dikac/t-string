@@ -7,15 +7,21 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../string/string"], factory);
+        define(["require", "exports", "./empty", "../trim"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const string_1 = __importDefault(require("../string/string"));
-    function String(string, subject = 'type', conversion = value => typeof value) {
-        return new TypeError(string_1.default(false, string, subject, conversion));
+    /**
+     * check if {@param string} is white space (\s) or empty string {@see Empty}
+     *
+     * @param string
+     */
+    const empty_1 = __importDefault(require("./empty"));
+    const trim_1 = __importDefault(require("../trim"));
+    function Blank(string) {
+        return empty_1.default(trim_1.default(string));
     }
-    exports.default = String;
+    exports.default = Blank;
 });
-//# sourceMappingURL=string.js.map
+//# sourceMappingURL=blank.js.map

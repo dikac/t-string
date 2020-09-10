@@ -1,4 +1,3 @@
-import Sentence from "../../message/sentence";
 import Truncate from "../../truncate";
 import Sentences from "../../message/sentences";
 

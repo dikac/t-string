@@ -1,6 +1,6 @@
 import Sentence from "../../message/sentence";
 
-export default function NotEmpty(
+export default function NotBlank(
     valid : boolean,
     value : string,
     subject : string = 'string',
@@ -9,17 +9,9 @@ export default function NotEmpty(
     let sentence = new Sentence(valid);
     sentence.reject = 'must not';
     sentence.accept = 'is not';
-    // sentence.predicate = {
-    //     invalid : 'is not',
-    //     valid : 'is'
-    // };
+
     sentence.subject = subject;
-    sentence.expect = 'empty string';
-    //
-    // if(!valid) {
-    //
-    //     sentence.subject = [subject, Truncate(value, 5)].join(' ');
-    // }
+    sentence.expect = 'blank string';
 
     return sentence.message;
 }

@@ -1,7 +1,5 @@
 import ValueOf from "@dikac/t-value/value-of/value-of";
-import NotEmpty from "../boolean/not-empty";
 import Validatable from "@dikac/t-validatable/validatable";
-import Trim from "../trim";
 import Sentences from "./sentences";
 
 /**

@@ -7,15 +7,18 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../string/string"], factory);
+        define(["require", "exports", "../boolean/not-blank", "./callback"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const string_1 = __importDefault(require("../string/string"));
-    function String(string, subject = 'type', conversion = value => typeof value) {
-        return new TypeError(string_1.default(false, string, subject, conversion));
+    const not_blank_1 = __importDefault(require("../boolean/not-blank"));
+    const callback_1 = __importDefault(require("./callback"));
+    class NotBlank extends callback_1.default {
+        constructor(value, message) {
+            super(value, not_blank_1.default, message);
+        }
     }
-    exports.default = String;
+    exports.default = NotBlank;
 });
-//# sourceMappingURL=string.js.map
+//# sourceMappingURL=not-blank.js.map

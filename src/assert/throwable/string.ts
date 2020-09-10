@@ -6,5 +6,5 @@ export default function String(
     conversion : (value:unknown)=>string = value=>typeof value
 ) : Error {
 
-    return new Error(StringType(false, string, subject, conversion))
+    return new TypeError(StringType(false, string, subject, conversion))
 }
