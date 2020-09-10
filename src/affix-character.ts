@@ -2,6 +2,13 @@ import Padding from "./padding/padding";
 import PrefixCharacter from "./prefix-character";
 import SuffixCharacter from "./suffix-character";
 
+/**
+ * add {@param character} to {@param string} if not exist and {@param string} not empty
+ *
+ * @param string
+ * @param character
+ * @param padding
+ */
 export default function AffixCharacter(
     string : string,
     character : string,

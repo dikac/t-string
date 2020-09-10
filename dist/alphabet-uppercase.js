@@ -9,6 +9,9 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    /**
+     * upper case alphabet string
+     */
     const AlphabetUppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     exports.default = AlphabetUppercase;
 });

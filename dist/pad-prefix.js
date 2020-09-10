@@ -10,6 +10,9 @@
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     const lodash_1 = require("lodash");
+    /**
+     * @see padStart
+     */
     const PadPrefix = lodash_1.padStart;
     exports.default = PadPrefix;
 });

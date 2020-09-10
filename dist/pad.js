@@ -16,6 +16,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     const pad_prefix_1 = __importDefault(require("./pad-prefix"));
     const pad_suffix_1 = __importDefault(require("./pad-suffix"));
     const pad_circumfix_1 = __importDefault(require("./pad-circumfix"));
+    /**
+     * pad string depend on {@param mode}
+     * {@see PadPrefix}
+     * {@see PadSuffix}
+     * {@see PadCircumfix}
+     *
+     * @param string
+     * @param padding
+     * @param length
+     * @param mode
+     */
     function Pad(string, padding, length, mode) {
         switch (mode) {
             case padding_1.default.PREFIX:

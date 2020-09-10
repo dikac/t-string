@@ -9,6 +9,9 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    /**
+     * lower case alphabet string
+     */
     const AlphabetLowercase = 'abcdefghijklmnopqrstuvwxyz';
     exports.default = AlphabetLowercase;
 });

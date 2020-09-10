@@ -10,7 +10,7 @@
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     /**
-     * append {@param character} to {@param string} if not exist
+     * append {@param character} to {@param string} if not exist and {@param string} not empty
      *
      * @param string
      * @param character

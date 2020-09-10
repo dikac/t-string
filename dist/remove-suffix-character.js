@@ -9,6 +9,9 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    /**
+     * remove {@param character} at the end of {@param string}
+     */
     function RemoveSuffixCharacter(string, character) {
         if (string.length !== 0) {
             character = character[0];

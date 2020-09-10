@@ -10,6 +10,9 @@
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     const lodash_1 = require("lodash");
+    /**
+     * @see padEnd
+     */
     const PadSuffix = lodash_1.padEnd;
     exports.default = PadSuffix;
 });

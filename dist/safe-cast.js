@@ -9,6 +9,12 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    /**
+     * convert anythin to string by using toString() method, or empty string for
+     * null, undefined
+     *
+     * @param string
+     */
     function SafeCast(string) {
         switch (string) {
             case null:

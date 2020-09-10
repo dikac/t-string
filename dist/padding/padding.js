@@ -11,8 +11,17 @@
     Object.defineProperty(exports, "__esModule", { value: true });
     var Padding;
     (function (Padding) {
+        /**
+         * starting, append operation
+         */
         Padding[Padding["SUFFIX"] = 0] = "SUFFIX";
+        /**
+         * ending, prepend operation
+         */
         Padding[Padding["PREFIX"] = 1] = "PREFIX";
+        /**
+         * both end operation
+         */
         Padding[Padding["CIRCUMFIX"] = 2] = "CIRCUMFIX";
     })(Padding || (Padding = {}));
     exports.default = Padding;

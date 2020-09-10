@@ -15,6 +15,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     const padding_1 = __importDefault(require("./padding/padding"));
     const prefix_character_1 = __importDefault(require("./prefix-character"));
     const suffix_character_1 = __importDefault(require("./suffix-character"));
+    /**
+     * add {@param character} to {@param string} if not exist and {@param string} not empty
+     *
+     * @param string
+     * @param character
+     * @param padding
+     */
     function AffixCharacter(string, character, padding) {
         switch (padding) {
             case padding_1.default.PREFIX:

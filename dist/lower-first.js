@@ -10,6 +10,9 @@
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     const lodash_1 = require("lodash");
+    /**
+     * @see lowerFirst
+     */
     const LowerFirst = lodash_1.lowerFirst;
     exports.default = LowerFirst;
 });

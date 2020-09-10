@@ -3,6 +3,17 @@ import PadPrefix from "./pad-prefix";
 import PadSuffix from "./pad-suffix";
 import PadCircumfix from "./pad-circumfix";
 
+/**
+ * pad string depend on {@param mode}
+ * {@see PadPrefix}
+ * {@see PadSuffix}
+ * {@see PadCircumfix}
+ *
+ * @param string
+ * @param padding
+ * @param length
+ * @param mode
+ */
 export default function Pad(
     string : string,
     padding : string,
