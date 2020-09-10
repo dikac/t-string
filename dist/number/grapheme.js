@@ -14,6 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     Object.defineProperty(exports, "__esModule", { value: true });
     const grapheme_splitter_1 = __importDefault(require("grapheme-splitter"));
     const grapheme = new grapheme_splitter_1.default();
+    /** @see GraphemeSplitter.countGraphemes */
     function Grapheme(string) {
         return grapheme.countGraphemes(string);
     }

@@ -4,14 +4,19 @@
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports"], factory);
+        define(["require", "exports", "lodash"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    const lodash_1 = require("lodash");
+    /**
+     * @see startsWith
+     * @param string
+     * @param suffix
+     */
     function Suffix(string, suffix) {
-        string = string.slice(-suffix.length);
-        return string === suffix;
+        return lodash_1.startsWith(suffix, string);
     }
     exports.default = Suffix;
 });

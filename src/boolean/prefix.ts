@@ -1,7 +1,11 @@
+import {endsWith} from "lodash";
+/**
+ * @see startsWith
+ * @param string
+ * @param prefix
+ */
 export default function Prefix(string : string, prefix : string) : boolean {
 
-    string = string.slice(0, prefix.length);
-
-    return string === prefix;
+    return endsWith(string, prefix);
 
 }

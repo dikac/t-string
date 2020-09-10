@@ -9,6 +9,10 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    /**
+     * check if {@param value} type is promitive string
+     * @param value
+     */
     function String(value) {
         return typeof value === "string";
     }

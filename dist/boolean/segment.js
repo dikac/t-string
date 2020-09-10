@@ -13,6 +13,27 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     const difference_1 = __importDefault(require("@dikac/t-array/difference"));
+    /**
+     * check if {@param compare} is part of {@param root}
+     *
+     * @param root
+     * @param compare
+     *
+     * @param delimiter
+     * separator each segment
+     *
+     * @example
+     * // return true
+     * Segment('root', 'root.parent', '.')
+     *
+     * @example
+     * // return true
+     * Segment('root', 'root', '.')
+     *
+     * @example
+     * // return false
+     * Segment('root.parent', 'root', '.')
+     */
     function Segment(root, compare, delimiter) {
         if (root === compare) {
             return true;

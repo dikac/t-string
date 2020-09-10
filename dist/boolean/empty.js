@@ -9,6 +9,11 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    /**
+     * check if {@param string} length is zero
+     *
+     * @param string
+     */
     function Empty(string) {
         return string === '';
     }

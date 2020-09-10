@@ -9,8 +9,14 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    function Match(source, pattern) {
-        let match = source.match(pattern);
+    /**
+     * match string {@param string} against {@param pattern}
+     *
+     * @param string
+     * @param pattern
+     */
+    function Match(string, pattern) {
+        let match = string.match(pattern);
         if (match !== null) {
             return true;
         }

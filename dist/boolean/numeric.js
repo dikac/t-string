@@ -13,6 +13,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     const match_1 = __importDefault(require("./match"));
+    /**
+     * check if {@param source} is numeric
+     *
+     * @param source
+     */
     function Numeric(source) {
         return match_1.default(source, /^[-+]*\d*(\.\d*)?$/i);
     }

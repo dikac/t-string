@@ -1,1 +1,1 @@
-{"version":3,"file":"prefix.js","sourceRoot":"","sources":["../../src/boolean/prefix.ts"],"names":[],"mappings":";;;;;;;;;;;IAAA,SAAwB,MAAM,CAAC,MAAe,EAAE,MAAe;QAE3D,MAAM,GAAG,MAAM,CAAC,KAAK,CAAC,CAAC,EAAE,MAAM,CAAC,MAAM,CAAC,CAAC;QAExC,OAAO,MAAM,KAAK,MAAM,CAAC;IAE7B,CAAC;IAND,yBAMC"}
+{"version":3,"file":"prefix.js","sourceRoot":"","sources":["../../src/boolean/prefix.ts"],"names":[],"mappings":";;;;;;;;;;;IAAA,mCAAgC;IAChC;;;;OAIG;IACH,SAAwB,MAAM,CAAC,MAAe,EAAE,MAAe;QAE3D,OAAO,iBAAQ,CAAC,MAAM,EAAE,MAAM,CAAC,CAAC;IAEpC,CAAC;IAJD,yBAIC"}

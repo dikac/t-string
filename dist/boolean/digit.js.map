@@ -1,1 +1,1 @@
-{"version":3,"file":"digit.js","sourceRoot":"","sources":["../../src/boolean/digit.ts"],"names":[],"mappings":";;;;;;;;;;;;;;IAAA,oDAA4B;IAE5B,SAAwB,KAAK,CAAC,MAAe;QAEzC,OAAO,eAAK,CAAC,MAAM,EAAE,QAAQ,CAAC,CAAA;IAClC,CAAC;IAHD,wBAGC"}
+{"version":3,"file":"digit.js","sourceRoot":"","sources":["../../src/boolean/digit.ts"],"names":[],"mappings":";;;;;;;;;;;;;;IAAA,oDAA4B;IAE5B;;;OAGG;IACH,SAAwB,KAAK,CAAC,MAAe;QAEzC,OAAO,eAAK,CAAC,MAAM,EAAE,QAAQ,CAAC,CAAA;IAClC,CAAC;IAHD,wBAGC"}

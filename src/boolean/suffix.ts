@@ -1,7 +1,12 @@
+import {startsWith} from "lodash";
+
+/**
+ * @see startsWith
+ * @param string
+ * @param suffix
+ */
 export default function Suffix(string : string, suffix : string) : boolean {
 
-    string = string.slice(-suffix.length);
-
-    return string === suffix;
+    return startsWith(suffix, string);
 
 }
