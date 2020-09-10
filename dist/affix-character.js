@@ -7,12 +7,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "./padding/padding", "./prefix-character", "./suffix-character"], factory);
+        define(["require", "exports", "./affix/affix", "./prefix-character", "./suffix-character"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const padding_1 = __importDefault(require("./padding/padding"));
+    const affix_1 = __importDefault(require("./affix/affix"));
     const prefix_character_1 = __importDefault(require("./prefix-character"));
     const suffix_character_1 = __importDefault(require("./suffix-character"));
     /**
@@ -24,11 +24,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
      */
     function AffixCharacter(string, character, padding) {
         switch (padding) {
-            case padding_1.default.PREFIX:
+            case affix_1.default.PREFIX:
                 return prefix_character_1.default(string, character);
-            case padding_1.default.SUFFIX:
+            case affix_1.default.SUFFIX:
                 return suffix_character_1.default(string, character);
-            case padding_1.default.CIRCUMFIX:
+            case affix_1.default.CIRCUMFIX:
                 string = prefix_character_1.default(string, character);
                 return suffix_character_1.default(string, character);
         }

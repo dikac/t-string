@@ -1,4 +1,4 @@
-declare enum Padding {
+declare enum Affix {
     /**
      * starting, append operation
      */
@@ -12,4 +12,4 @@ declare enum Padding {
      */
     CIRCUMFIX = 2
 }
-export default Padding;
+export default Affix;

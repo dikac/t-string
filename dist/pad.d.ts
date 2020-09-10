@@ -1,4 +1,4 @@
-import PaddingOption from "./padding/padding";
+import PaddingOption from "./affix/affix";
 /**
  * pad string depend on {@param mode}
  * {@see PadPrefix}

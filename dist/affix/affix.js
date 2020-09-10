@@ -9,21 +9,21 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    var Padding;
-    (function (Padding) {
+    var Affix;
+    (function (Affix) {
         /**
          * starting, append operation
          */
-        Padding[Padding["SUFFIX"] = 0] = "SUFFIX";
+        Affix[Affix["SUFFIX"] = 0] = "SUFFIX";
         /**
          * ending, prepend operation
          */
-        Padding[Padding["PREFIX"] = 1] = "PREFIX";
+        Affix[Affix["PREFIX"] = 1] = "PREFIX";
         /**
          * both end operation
          */
-        Padding[Padding["CIRCUMFIX"] = 2] = "CIRCUMFIX";
-    })(Padding || (Padding = {}));
-    exports.default = Padding;
+        Affix[Affix["CIRCUMFIX"] = 2] = "CIRCUMFIX";
+    })(Affix || (Affix = {}));
+    exports.default = Affix;
 });
-//# sourceMappingURL=padding.js.map
+//# sourceMappingURL=affix.js.map

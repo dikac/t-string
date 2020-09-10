@@ -1,4 +1,4 @@
-import Padding from "./padding/padding";
+import Affix from "./affix/affix";
 /**
  * add {@param character} to {@param string} if not exist and {@param string} not empty
  *
@@ -6,4 +6,4 @@ import Padding from "./padding/padding";
  * @param character
  * @param padding
  */
-export default function AffixCharacter(string: string, character: string, padding: Padding): string;
+export default function AffixCharacter(string: string, character: string, padding: Affix): string;
