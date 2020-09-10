@@ -1,4 +1,4 @@
-import {endsWith} from "lodash";
+import {startsWith} from "lodash";
 /**
  * @see startsWith
  * @param string
@@ -6,6 +6,6 @@ import {endsWith} from "lodash";
  */
 export default function Prefix(string : string, prefix : string) : boolean {
 
-    return endsWith(string, prefix);
+    return startsWith(string, prefix);
 
 }

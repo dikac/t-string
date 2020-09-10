@@ -16,7 +16,7 @@
      * @param suffix
      */
     function Suffix(string, suffix) {
-        return lodash_1.startsWith(suffix, string);
+        return lodash_1.endsWith(string, suffix);
     }
     exports.default = Suffix;
 });

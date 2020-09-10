@@ -1,4 +1,4 @@
-import {startsWith} from "lodash";
+import {endsWith} from "lodash";
 
 /**
  * @see startsWith
@@ -7,6 +7,6 @@ import {startsWith} from "lodash";
  */
 export default function Suffix(string : string, suffix : string) : boolean {
 
-    return startsWith(suffix, string);
+    return endsWith(string, suffix);
 
 }

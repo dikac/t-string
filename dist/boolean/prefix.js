@@ -16,7 +16,7 @@
      * @param prefix
      */
     function Prefix(string, prefix) {
-        return lodash_1.endsWith(string, prefix);
+        return lodash_1.startsWith(string, prefix);
     }
     exports.default = Prefix;
 });
