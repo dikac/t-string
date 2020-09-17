@@ -1,34 +1,18 @@
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
+import AlphabetFromObject from "../boolean/alphabet";
+export default class Alphabet {
+    constructor(value, message) {
+        this.value = value;
+        this.messageFactory = message;
+        this.valid = AlphabetFromObject(value);
     }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../boolean/alphabet"], factory);
+    valueOf() {
+        return this.value;
     }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    const alphabet_1 = __importDefault(require("../boolean/alphabet"));
-    class Alphabet {
-        constructor(value, message) {
-            this.value = value;
-            this.messageFactory = message;
-            this.valid = alphabet_1.default(value);
-        }
-        valueOf() {
-            return this.value;
-        }
-        toString() {
-            return this.value;
-        }
-        get message() {
-            return this.messageFactory(this);
-        }
+    toString() {
+        return this.value;
     }
-    exports.default = Alphabet;
-});
+    get message() {
+        return this.messageFactory(this);
+    }
+}
 //# sourceMappingURL=alphabet.js.map

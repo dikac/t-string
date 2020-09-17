@@ -1,21 +1,5 @@
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../../boolean/empty"], factory);
-    }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    const empty_1 = __importDefault(require("../../boolean/empty"));
-    function Empty(object) {
-        return empty_1.default(object.value);
-    }
-    exports.default = Empty;
-});
+import EmptyParameter from "../../boolean/empty";
+export default function Empty(object) {
+    return EmptyParameter(object.value);
+}
 //# sourceMappingURL=empty.js.map

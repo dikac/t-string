@@ -1,23 +1,7 @@
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "grapheme-splitter"], factory);
-    }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    const grapheme_splitter_1 = __importDefault(require("grapheme-splitter"));
-    const grapheme = new grapheme_splitter_1.default();
-    /** @see GraphemeSplitter.countGraphemes */
-    function Grapheme(string) {
-        return grapheme.countGraphemes(string);
-    }
-    exports.default = Grapheme;
-});
+import GraphemeSplitter from "grapheme-splitter";
+const grapheme = new GraphemeSplitter();
+/** @see GraphemeSplitter.countGraphemes */
+export default function Grapheme(string) {
+    return grapheme.countGraphemes(string);
+}
 //# sourceMappingURL=grapheme.js.map

@@ -1,1 +1,1 @@
-{"version":3,"file":"suffix.js","sourceRoot":"","sources":["../../src/boolean/suffix.ts"],"names":[],"mappings":";;;;;;;;;;;IAAA,mCAAgC;IAEhC;;;;OAIG;IACH,SAAwB,MAAM,CAAC,MAAe,EAAE,MAAe;QAE3D,OAAO,iBAAQ,CAAC,MAAM,EAAE,MAAM,CAAC,CAAC;IAEpC,CAAC;IAJD,yBAIC"}
+{"version":3,"file":"suffix.js","sourceRoot":"","sources":["../../src/boolean/suffix.ts"],"names":[],"mappings":"AAAA,OAAO,EAAC,QAAQ,EAAC,MAAM,QAAQ,CAAC;AAEhC;;;;GAIG;AACH,MAAM,CAAC,OAAO,UAAU,MAAM,CAAC,MAAe,EAAE,MAAe;IAE3D,OAAO,QAAQ,CAAC,MAAM,EAAE,MAAM,CAAC,CAAC;AAEpC,CAAC"}

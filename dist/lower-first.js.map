@@ -1,1 +1,1 @@
-{"version":3,"file":"lower-first.js","sourceRoot":"","sources":["../src/lower-first.ts"],"names":[],"mappings":";;;;;;;;;;;IAAA,mCAAkC;IAElC;;OAEG;IACH,MAAM,UAAU,GAAiC,mBAAU,CAAC;IAC5D,kBAAe,UAAU,CAAC"}
+{"version":3,"file":"lower-first.js","sourceRoot":"","sources":["../src/lower-first.ts"],"names":[],"mappings":"AAAA,OAAO,EAAC,UAAU,EAAC,MAAM,QAAQ,CAAC;AAElC;;GAEG;AACH,MAAM,UAAU,GAAiC,UAAU,CAAC;AAC5D,eAAe,UAAU,CAAC"}

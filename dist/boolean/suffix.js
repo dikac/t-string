@@ -1,23 +1,10 @@
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "lodash"], factory);
-    }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    const lodash_1 = require("lodash");
-    /**
-     * @see startsWith
-     * @param string
-     * @param suffix
-     */
-    function Suffix(string, suffix) {
-        return lodash_1.endsWith(string, suffix);
-    }
-    exports.default = Suffix;
-});
+import { endsWith } from "lodash";
+/**
+ * @see startsWith
+ * @param string
+ * @param suffix
+ */
+export default function Suffix(string, suffix) {
+    return endsWith(string, suffix);
+}
 //# sourceMappingURL=suffix.js.map

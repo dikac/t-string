@@ -1,1 +1,1 @@
-{"version":3,"file":"pad-suffix.js","sourceRoot":"","sources":["../src/pad-suffix.ts"],"names":[],"mappings":";;;;;;;;;;;IAAA,mCAA8B;IAE9B;;OAEG;IACH,MAAM,SAAS,GAAuE,eAAM,CAAC;IAC7F,kBAAe,SAAS,CAAC"}
+{"version":3,"file":"pad-suffix.js","sourceRoot":"","sources":["../src/pad-suffix.ts"],"names":[],"mappings":"AAAA,OAAO,EAAC,MAAM,EAAC,MAAM,QAAQ,CAAC;AAE9B;;GAEG;AACH,MAAM,SAAS,GAAuE,MAAM,CAAC;AAC7F,eAAe,SAAS,CAAC"}

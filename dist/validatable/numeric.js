@@ -1,34 +1,18 @@
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
+import NumericFromObject from "../boolean/numeric";
+export default class Numeric {
+    constructor(value, message) {
+        this.value = value;
+        this.messageFactory = message;
+        this.valid = NumericFromObject(this.value);
     }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../boolean/numeric"], factory);
+    toString() {
+        return this.value;
     }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    const numeric_1 = __importDefault(require("../boolean/numeric"));
-    class Numeric {
-        constructor(value, message) {
-            this.value = value;
-            this.messageFactory = message;
-            this.valid = numeric_1.default(this.value);
-        }
-        toString() {
-            return this.value;
-        }
-        valueOf() {
-            return this.value;
-        }
-        get message() {
-            return this.messageFactory(this);
-        }
+    valueOf() {
+        return this.value;
     }
-    exports.default = Numeric;
-});
+    get message() {
+        return this.messageFactory(this);
+    }
+}
 //# sourceMappingURL=numeric.js.map

@@ -1,29 +1,16 @@
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports"], factory);
-    }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    /**
-     * prepend {@param character} to {@param string} if not exist and {@param string} not empty
-     *
-     * @param string
-     * @param character
-     */
-    function PrefixCharacter(string, character) {
-        if (string.length !== 0) {
-            character = character[0];
-            if (string[0] !== character) {
-                return character + string;
-            }
+/**
+ * prepend {@param character} to {@param string} if not exist and {@param string} not empty
+ *
+ * @param string
+ * @param character
+ */
+export default function PrefixCharacter(string, character) {
+    if (string.length !== 0) {
+        character = character[0];
+        if (string[0] !== character) {
+            return character + string;
         }
-        return string;
     }
-    exports.default = PrefixCharacter;
-});
+    return string;
+}
 //# sourceMappingURL=prefix-character.js.map

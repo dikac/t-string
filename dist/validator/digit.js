@@ -1,26 +1,10 @@
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
+import DigitValidatable from "../validatable/digit";
+export default class Digit {
+    constructor(message) {
+        this.message = message;
     }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../validatable/digit"], factory);
+    validate(value) {
+        return new DigitValidatable(value, this.message);
     }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    const digit_1 = __importDefault(require("../validatable/digit"));
-    class Digit {
-        constructor(message) {
-            this.message = message;
-        }
-        validate(value) {
-            return new digit_1.default(value, this.message);
-        }
-    }
-    exports.default = Digit;
-});
+}
 //# sourceMappingURL=digit.js.map

@@ -1,29 +1,16 @@
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
+/**
+ * convert anythin to string by using toString() method, or empty string for
+ * null, undefined
+ *
+ * @param string
+ */
+export default function SafeCast(string) {
+    switch (string) {
+        case null:
+        case undefined:
+            return '';
+        default:
+            return string.toString();
     }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports"], factory);
-    }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    /**
-     * convert anythin to string by using toString() method, or empty string for
-     * null, undefined
-     *
-     * @param string
-     */
-    function SafeCast(string) {
-        switch (string) {
-            case null:
-            case undefined:
-                return '';
-            default:
-                return string.toString();
-        }
-    }
-    exports.default = SafeCast;
-});
+}
 //# sourceMappingURL=safe-cast.js.map

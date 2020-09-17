@@ -1,32 +1,16 @@
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../../value/match", "../../message/sentences-must"], factory);
-    }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    const match_1 = __importDefault(require("../../value/match"));
-    const sentences_must_1 = __importDefault(require("../../message/sentences-must"));
-    function Alphanumeric(valid, value, subject = 'string') {
-        let sentence = sentences_must_1.default(valid);
-        sentence.expect.push('alphanumeric');
-        sentence.subject.push(subject);
-        sentence.comma.push('expect');
-        if (!valid) {
-            let match = new match_1.default(value, /[^a-zA-Z0-9]{1,5}/);
-            if (match.valid) {
-                sentence.actual.push('contains', `"${match.match[0]}"`);
-            }
+import Match from "../../value/match";
+import SentencesMust from "../../message/sentences-must";
+export default function Alphanumeric(valid, value, subject = 'string') {
+    let sentence = SentencesMust(valid);
+    sentence.expect.push('alphanumeric');
+    sentence.subject.push(subject);
+    sentence.comma.push('expect');
+    if (!valid) {
+        let match = new Match(value, /[^a-zA-Z0-9]{1,5}/);
+        if (match.valid) {
+            sentence.actual.push('contains', `"${match.match[0]}"`);
         }
-        return sentence.message;
     }
-    exports.default = Alphanumeric;
-});
+    return sentence.message;
+}
 //# sourceMappingURL=alphanumeric.js.map

@@ -1,34 +1,18 @@
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
+import EmptyBoolean from "./boolean/empty";
+export default class Empty {
+    constructor(value, message) {
+        this.value = value;
+        this.messageFactory = message;
+        this.valid = EmptyBoolean(this);
     }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "./boolean/empty"], factory);
+    toString() {
+        return this.value;
     }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    const empty_1 = __importDefault(require("./boolean/empty"));
-    class Empty {
-        constructor(value, message) {
-            this.value = value;
-            this.messageFactory = message;
-            this.valid = empty_1.default(this);
-        }
-        toString() {
-            return this.value;
-        }
-        valueOf() {
-            return this.value;
-        }
-        get message() {
-            return this.messageFactory(this);
-        }
+    valueOf() {
+        return this.value;
     }
-    exports.default = Empty;
-});
+    get message() {
+        return this.messageFactory(this);
+    }
+}
 //# sourceMappingURL=empty.js.map

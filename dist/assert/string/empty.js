@@ -1,29 +1,13 @@
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
+import Truncate from "../../truncate";
+import SentencesMust from "../../message/sentences-must";
+export default function Empty(valid, value, subject = 'string') {
+    let sentence = SentencesMust(valid);
+    sentence.expect.push('empty', 'string');
+    sentence.subject.push(subject);
+    sentence.comma.push('expect');
+    if (!valid && value.length) {
+        sentence.actual.push('actual', `"${Truncate(value, 8)}"`);
     }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../../truncate", "../../message/sentences-must"], factory);
-    }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    const truncate_1 = __importDefault(require("../../truncate"));
-    const sentences_must_1 = __importDefault(require("../../message/sentences-must"));
-    function Empty(valid, value, subject = 'string') {
-        let sentence = sentences_must_1.default(valid);
-        sentence.expect.push('empty', 'string');
-        sentence.subject.push(subject);
-        sentence.comma.push('expect');
-        if (!valid && value.length) {
-            sentence.actual.push('actual', `"${truncate_1.default(value, 8)}"`);
-        }
-        return sentence.message;
-    }
-    exports.default = Empty;
-});
+    return sentence.message;
+}
 //# sourceMappingURL=empty.js.map

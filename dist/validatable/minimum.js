@@ -1,38 +1,22 @@
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
+import MinimumObject from "./boolean/minimum";
+import Count from "../number/count";
+export default class Minimum {
+    constructor(value, minimum, inclusive, message, converter = Count) {
+        this.value = value;
+        this.minimum = minimum;
+        this.inclusive = inclusive;
+        this.converter = converter;
+        this.valid = MinimumObject(this);
+        this.messageFactory = message;
     }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "./boolean/minimum", "../number/count"], factory);
+    valueOf() {
+        return this.value;
     }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    const minimum_1 = __importDefault(require("./boolean/minimum"));
-    const count_1 = __importDefault(require("../number/count"));
-    class Minimum {
-        constructor(value, minimum, inclusive, message, converter = count_1.default) {
-            this.value = value;
-            this.minimum = minimum;
-            this.inclusive = inclusive;
-            this.converter = converter;
-            this.valid = minimum_1.default(this);
-            this.messageFactory = message;
-        }
-        valueOf() {
-            return this.value;
-        }
-        toString() {
-            return this.value;
-        }
-        get message() {
-            return this.messageFactory(this);
-        }
+    toString() {
+        return this.value;
     }
-    exports.default = Minimum;
-});
+    get message() {
+        return this.messageFactory(this);
+    }
+}
 //# sourceMappingURL=minimum.js.map

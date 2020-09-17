@@ -1,21 +1,5 @@
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../../assert/string/digit"], factory);
-    }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    const digit_1 = __importDefault(require("../../assert/string/digit"));
-    function Digit(object) {
-        return digit_1.default(object.valid, object.value);
-    }
-    exports.default = Digit;
-});
+import DigitMessage from "../../assert/string/digit";
+export default function Digit(object) {
+    return DigitMessage(object.valid, object.value);
+}
 //# sourceMappingURL=digit.js.map

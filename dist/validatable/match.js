@@ -1,30 +1,14 @@
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
+import ValueMatch from "../value/match";
+import MemoizeGetter from "@dikac/t-object/value/value/set-getter";
+export default class Match extends ValueMatch {
+    constructor(value, pattern, messageFactory) {
+        super(value, pattern);
+        this.value = value;
+        this.pattern = pattern;
+        this.messageFactory = messageFactory;
     }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../value/match", "@dikac/t-object/value/value/set-getter"], factory);
+    get message() {
+        return MemoizeGetter(this, 'message', this.messageFactory(this));
     }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    const match_1 = __importDefault(require("../value/match"));
-    const set_getter_1 = __importDefault(require("@dikac/t-object/value/value/set-getter"));
-    class Match extends match_1.default {
-        constructor(value, pattern, messageFactory) {
-            super(value, pattern);
-            this.value = value;
-            this.pattern = pattern;
-            this.messageFactory = messageFactory;
-        }
-        get message() {
-            return set_getter_1.default(this, 'message', this.messageFactory(this));
-        }
-    }
-    exports.default = Match;
-});
+}
 //# sourceMappingURL=match.js.map

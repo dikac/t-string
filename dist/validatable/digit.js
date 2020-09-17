@@ -1,34 +1,18 @@
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
+import DigitFromObject from "../boolean/digit";
+export default class Digit {
+    constructor(value, message) {
+        this.value = value;
+        this.messageFactory = message;
+        this.valid = DigitFromObject(value);
     }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../boolean/digit"], factory);
+    toString() {
+        return this.value;
     }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    const digit_1 = __importDefault(require("../boolean/digit"));
-    class Digit {
-        constructor(value, message) {
-            this.value = value;
-            this.messageFactory = message;
-            this.valid = digit_1.default(value);
-        }
-        toString() {
-            return this.value;
-        }
-        get message() {
-            return this.messageFactory(this);
-        }
-        valueOf() {
-            return this.value;
-        }
+    get message() {
+        return this.messageFactory(this);
     }
-    exports.default = Digit;
-});
+    valueOf() {
+        return this.value;
+    }
+}
 //# sourceMappingURL=digit.js.map

@@ -1,1 +1,1 @@
-{"version":3,"file":"trim-suffix.js","sourceRoot":"","sources":["../src/trim-suffix.ts"],"names":[],"mappings":";;;;;;;;;;;IAAA,mCAAiC;IAEjC,MAAM,UAAU,GAAuD,kBAAS,CAAC;IACjF,kBAAe,UAAU,CAAC"}
+{"version":3,"file":"trim-suffix.js","sourceRoot":"","sources":["../src/trim-suffix.ts"],"names":[],"mappings":"AAAA,OAAO,EAAC,SAAS,EAAC,MAAM,QAAQ,CAAC;AAEjC,MAAM,UAAU,GAAuD,SAAS,CAAC;AACjF,eAAe,UAAU,CAAC"}

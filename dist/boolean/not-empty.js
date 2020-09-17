@@ -1,22 +1,9 @@
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports"], factory);
-    }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    /**
-     * check if {@param string} length not zero
-     *
-     * @param string
-     */
-    function NotEmpty(string) {
-        return string !== '';
-    }
-    exports.default = NotEmpty;
-});
+/**
+ * check if {@param string} length not zero
+ *
+ * @param string
+ */
+export default function NotEmpty(string) {
+    return string !== '';
+}
 //# sourceMappingURL=not-empty.js.map
